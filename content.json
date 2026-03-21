@@ -1,2667 +1,2134 @@
 [
     {
         "path": "boot.img",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/boot.img",
-        "hash": "3502796189"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/boot.img"
     },
     {
         "path": "blittle",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/blittle",
-        "hash": "3724457560"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/blittle"
     },
     {
         "path": ".settings",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.settings",
-        "hash": "1021357210"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.settings"
     },
     {
         "path": ".startup.boot",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.startup.boot",
-        "hash": "1842355112"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.startup.boot"
     },
     {
         "path": "version/ver.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/version/ver.txt",
-        "hash": "49"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/version/ver.txt"
     },
     {
         "path": ".enchat/settings",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.enchat/settings",
-        "hash": "2870754666"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.enchat/settings"
     },
     {
         "path": "packages/monitor/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/.package",
-        "hash": "2142996581"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/.package"
     },
     {
         "path": "packages/monitor/termShare.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/termShare.lua",
-        "hash": "1538338517"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/termShare.lua"
     },
     {
         "path": "packages/monitor/mirrorHost.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mirrorHost.lua",
-        "hash": "264774588"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mirrorHost.lua"
     },
     {
         "path": "packages/monitor/mwm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mwm.lua",
-        "hash": "3591012302"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mwm.lua"
     },
     {
         "path": "packages/monitor/mirrorClient.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mirrorClient.lua",
-        "hash": "2921266893"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mirrorClient.lua"
     },
     {
         "path": "packages/monitor/mirror.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mirror.lua",
-        "hash": "3491292442"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/mirror.lua"
     },
     {
         "path": "packages/monitor/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/etc/apps.db",
-        "hash": "2194155742"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/etc/apps.db"
     },
     {
         "path": "packages/monitor/help/mirror.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/help/mirror.txt",
-        "hash": "1432412675"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/monitor/help/mirror.txt"
     },
     {
         "path": "packages/farms/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/.package",
-        "hash": "779387458"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/.package"
     },
     {
         "path": "packages/farms/treefarm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/treefarm.lua",
-        "hash": "37190763"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/treefarm.lua"
     },
     {
         "path": "packages/farms/attack.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/attack.lua",
-        "hash": "4094130408"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/attack.lua"
     },
     {
         "path": "packages/farms/superTreefarm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/superTreefarm.lua",
-        "hash": "3351029097"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/superTreefarm.lua"
     },
     {
         "path": "packages/farms/farmer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/farmer.lua",
-        "hash": "2790215145"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/farmer.lua"
     },
     {
         "path": "packages/farms/rancher.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/rancher.lua",
-        "hash": "2111592184"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/rancher.lua"
     },
     {
         "path": "packages/farms/spawner.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/spawner.lua",
-        "hash": "3987680825"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/spawner.lua"
     },
     {
         "path": "packages/farms/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/etc/apps.db",
-        "hash": "2291209730"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/etc/apps.db"
     },
     {
         "path": "packages/farms/etc/recipes/minecraft.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/etc/recipes/minecraft.db",
-        "hash": "186606094"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/etc/recipes/minecraft.db"
     },
     {
         "path": "packages/farms/help/farmer.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/help/farmer.txt",
-        "hash": "506724733"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/help/farmer.txt"
     },
     {
         "path": "packages/farms/help/superTreefarm.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/help/superTreefarm.txt",
-        "hash": "1589636398"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/help/superTreefarm.txt"
     },
     {
         "path": "packages/farms/apis/crafting.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/apis/crafting.lua",
-        "hash": "614415318"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/apis/crafting.lua"
     },
     {
         "path": "packages/farms/apis/level.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/apis/level.lua",
-        "hash": "3700557932"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/apis/level.lua"
     },
     {
         "path": "packages/farms/apis/craft.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/apis/craft.lua",
-        "hash": "1178407570"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/farms/apis/craft.lua"
     },
     {
         "path": "packages/games/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/.package",
-        "hash": "831386715"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/.package"
     },
     {
         "path": "packages/games/ccTunes.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/ccTunes.lua",
-        "hash": "3243668031"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/ccTunes.lua"
     },
     {
         "path": "packages/games/sameGame.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/sameGame.lua",
-        "hash": "1526912792"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/sameGame.lua"
     },
     {
         "path": "packages/games/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/etc/apps.db",
-        "hash": "4017531306"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/etc/apps.db"
     },
     {
         "path": "packages/games/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/etc/fstab",
-        "hash": "3198588599"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/games/etc/fstab"
     },
     {
         "path": "packages/builder/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/.package",
-        "hash": "771438521"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/.package"
     },
     {
         "path": "packages/builder/viewer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/viewer.lua",
-        "hash": "1637343092"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/viewer.lua"
     },
     {
         "path": "packages/builder/supplier.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/supplier.lua",
-        "hash": "3441015667"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/supplier.lua"
     },
     {
         "path": "packages/builder/base64dl.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/base64dl.lua",
-        "hash": "2503429390"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/base64dl.lua"
     },
     {
         "path": "packages/builder/builder.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/builder.lua",
-        "hash": "394814946"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/builder.lua"
     },
     {
         "path": "packages/builder/help/builder.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/help/builder.txt",
-        "hash": "1089248112"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/help/builder.txt"
     },
     {
         "path": "packages/builder/apis/blocks.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/blocks.lua",
-        "hash": "2849925399"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/blocks.lua"
     },
     {
         "path": "packages/builder/apis/commands.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/commands.lua",
-        "hash": "1607253990"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/commands.lua"
     },
     {
         "path": "packages/builder/apis/turtle.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/turtle.lua",
-        "hash": "1180157991"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/turtle.lua"
     },
     {
         "path": "packages/builder/apis/schematic.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/schematic.lua",
-        "hash": "2059045000"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/schematic.lua"
     },
     {
         "path": "packages/builder/apis/deflatelua.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/deflatelua.lua",
-        "hash": "1994320123"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/deflatelua.lua"
     },
     {
         "path": "packages/builder/apis/base64.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/base64.lua",
-        "hash": "977962368"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/base64.lua"
     },
     {
         "path": "packages/builder/apis/builder.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/builder.lua",
-        "hash": "996274187"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/builder/apis/builder.lua"
     },
     {
         "path": "packages/core/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/.package",
-        "hash": "2880480956"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/.package"
     },
     {
         "path": "packages/core/etc/names/minecraft.json",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/etc/names/minecraft.json",
-        "hash": "2999981249"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/etc/names/minecraft.json"
     },
     {
         "path": "packages/core/apis/inventoryAdapter.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/inventoryAdapter.lua",
-        "hash": "1783258029"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/inventoryAdapter.lua"
     },
     {
         "path": "packages/core/apis/swarm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/swarm.lua",
-        "hash": "166124770"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/swarm.lua"
     },
     {
         "path": "packages/core/apis/proxy.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/proxy.lua",
-        "hash": "335175754"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/proxy.lua"
     },
     {
         "path": "packages/core/apis/refinedAdapter.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/refinedAdapter.lua",
-        "hash": "2920842398"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/refinedAdapter.lua"
     },
     {
         "path": "packages/core/apis/chestAdapter.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/chestAdapter.lua",
-        "hash": "743793933"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/chestAdapter.lua"
     },
     {
         "path": "packages/core/apis/message.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/message.lua",
-        "hash": "1812073401"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/message.lua"
     },
     {
         "path": "packages/core/apis/itemDB.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/itemDB.lua",
-        "hash": "3510812861"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/itemDB.lua"
     },
     {
         "path": "packages/core/apis/meAdapter18.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/meAdapter18.lua",
-        "hash": "2770864465"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/meAdapter18.lua"
     },
     {
         "path": "packages/core/apis/chestAdapter18.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/chestAdapter18.lua",
-        "hash": "1152446958"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/chestAdapter18.lua"
     },
     {
         "path": "packages/core/apis/tableDB.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/tableDB.lua",
-        "hash": "3046811401"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/tableDB.lua"
     },
     {
         "path": "packages/core/apis/nameDB.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/nameDB.lua",
-        "hash": "4201769917"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/nameDB.lua"
     },
     {
         "path": "packages/core/apis/meAdapter.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/meAdapter.lua",
-        "hash": "1285768072"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/core/apis/meAdapter.lua"
     },
     {
         "path": "packages/compress/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/.package",
-        "hash": "946501479"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/.package"
     },
     {
         "path": "packages/compress/compress.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/compress.lua",
-        "hash": "305965845"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/compress.lua"
     },
     {
         "path": "packages/compress/uncompress.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/uncompress.lua",
-        "hash": "3519557060"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/uncompress.lua"
     },
     {
         "path": "packages/compress/apis/deflatelua.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/apis/deflatelua.lua",
-        "hash": "1519105349"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/apis/deflatelua.lua"
     },
     {
         "path": "packages/compress/apis/libdeflate.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/apis/libdeflate.lua",
-        "hash": "2213438583"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/compress/apis/libdeflate.lua"
     },
     {
         "path": "packages/milo/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/.package",
-        "hash": "1645662739"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/.package"
     },
     {
         "path": "packages/milo/MiloLocal.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/MiloLocal.lua",
-        "hash": "1883314940"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/MiloLocal.lua"
     },
     {
         "path": "packages/milo/MiloRemote.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/MiloRemote.lua",
-        "hash": "3716823541"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/MiloRemote.lua"
     },
     {
         "path": "packages/milo/storageGen.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/storageGen.lua",
-        "hash": "1611923485"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/storageGen.lua"
     },
     {
         "path": "packages/milo/core/machines.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/core/machines.lua",
-        "hash": "2844911038"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/core/machines.lua"
     },
     {
         "path": "packages/milo/core/listing.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/core/listing.lua",
-        "hash": "4092433919"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/core/listing.lua"
     },
     {
         "path": "packages/milo/core/learnWizard.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/core/learnWizard.lua",
-        "hash": "4178627320"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/core/learnWizard.lua"
     },
     {
         "path": "packages/milo/autorun/milo.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/autorun/milo.lua",
-        "hash": "3829839436"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/autorun/milo.lua"
     },
     {
         "path": "packages/milo/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/etc/apps.db",
-        "hash": "568520688"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/etc/apps.db"
     },
     {
         "path": "packages/milo/plugins/remote.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote.lua",
-        "hash": "2449389559"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote.lua"
     },
     {
         "path": "packages/milo/plugins/potionImportTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/potionImportTask.lua",
-        "hash": "3585514425"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/potionImportTask.lua"
     },
     {
         "path": "packages/milo/plugins/machineLearn.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/machineLearn.lua",
-        "hash": "2808975646"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/machineLearn.lua"
     },
     {
         "path": "packages/milo/plugins/trashcanView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/trashcanView.lua",
-        "hash": "1572656408"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/trashcanView.lua"
     },
     {
         "path": "packages/milo/plugins/refreshTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/refreshTask.lua",
-        "hash": "4232458365"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/refreshTask.lua"
     },
     {
         "path": "packages/milo/plugins/craftTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/craftTask.lua",
-        "hash": "3246122933"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/craftTask.lua"
     },
     {
         "path": "packages/milo/plugins/demandCraft.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/demandCraft.lua",
-        "hash": "3609548329"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/demandCraft.lua"
     },
     {
         "path": "packages/milo/plugins/statsView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/statsView.lua",
-        "hash": "3614273816"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/statsView.lua"
     },
     {
         "path": "packages/milo/plugins/exportTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/exportTask.lua",
-        "hash": "1355547821"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/exportTask.lua"
     },
     {
         "path": "packages/milo/plugins/turtleLearn.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/turtleLearn.lua",
-        "hash": "4128257827"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/turtleLearn.lua"
     },
     {
         "path": "packages/milo/plugins/backupView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/backupView.lua",
-        "hash": "2289404009"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/backupView.lua"
     },
     {
         "path": "packages/milo/plugins/importView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/importView.lua",
-        "hash": "1163144510"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/importView.lua"
     },
     {
         "path": "packages/milo/plugins/storageView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/storageView.lua",
-        "hash": "713688031"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/storageView.lua"
     },
     {
         "path": "packages/milo/plugins/activityView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/activityView.lua",
-        "hash": "3514143534"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/activityView.lua"
     },
     {
         "path": "packages/milo/plugins/transferView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/transferView.lua",
-        "hash": "2231668455"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/transferView.lua"
     },
     {
         "path": "packages/milo/plugins/replenishTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/replenishTask.lua",
-        "hash": "4157290617"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/replenishTask.lua"
     },
     {
         "path": "packages/milo/plugins/speakerView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/speakerView.lua",
-        "hash": "1464222333"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/speakerView.lua"
     },
     {
         "path": "packages/milo/plugins/importTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/importTask.lua",
-        "hash": "1875779769"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/importTask.lua"
     },
     {
         "path": "packages/milo/plugins/inputChestView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/inputChestView.lua",
-        "hash": "2624873587"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/inputChestView.lua"
     },
     {
         "path": "packages/milo/plugins/emitterTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/emitterTask.lua",
-        "hash": "55302143"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/emitterTask.lua"
     },
     {
         "path": "packages/milo/plugins/machineMover.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/machineMover.lua",
-        "hash": "3270131996"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/machineMover.lua"
     },
     {
         "path": "packages/milo/plugins/jobMonitor.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/jobMonitor.lua",
-        "hash": "2211905524"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/jobMonitor.lua"
     },
     {
         "path": "packages/milo/plugins/brewingStandView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/brewingStandView.lua",
-        "hash": "1766343536"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/brewingStandView.lua"
     },
     {
         "path": "packages/milo/plugins/inputChestTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/inputChestTask.lua",
-        "hash": "276507663"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/inputChestTask.lua"
     },
     {
         "path": "packages/milo/plugins/exportView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/exportView.lua",
-        "hash": "996594770"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/exportView.lua"
     },
     {
         "path": "packages/milo/plugins/emitterView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/emitterView.lua",
-        "hash": "2834613947"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/emitterView.lua"
     },
     {
         "path": "packages/milo/plugins/limitTask.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/limitTask.lua",
-        "hash": "4154271072"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/limitTask.lua"
     },
     {
         "path": "packages/milo/plugins/item.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item.lua",
-        "hash": "650716293"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item.lua"
     },
     {
         "path": "packages/milo/plugins/remoteCraft.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remoteCraft.lua",
-        "hash": "4100941343"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remoteCraft.lua"
     },
     {
         "path": "packages/milo/plugins/remote/deposit.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/deposit.lua",
-        "hash": "3706000639"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/deposit.lua"
     },
     {
         "path": "packages/milo/plugins/remote/depositAll.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/depositAll.lua",
-        "hash": "3006014934"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/depositAll.lua"
     },
     {
         "path": "packages/milo/plugins/remote/setup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/setup.lua",
-        "hash": "1713694973"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/setup.lua"
     },
     {
         "path": "packages/milo/plugins/remote/craft.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/craft.lua",
-        "hash": "296360825"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/craft.lua"
     },
     {
         "path": "packages/milo/plugins/remote/autostore.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/autostore.lua",
-        "hash": "3766308415"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/autostore.lua"
     },
     {
         "path": "packages/milo/plugins/remote/feeder.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/feeder.lua",
-        "hash": "1866492799"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/remote/feeder.lua"
     },
     {
         "path": "packages/milo/plugins/item/machinesTab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/machinesTab.lua",
-        "hash": "4174635976"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/machinesTab.lua"
     },
     {
         "path": "packages/milo/plugins/item/manageTab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/manageTab.lua",
-        "hash": "4123436730"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/manageTab.lua"
     },
     {
         "path": "packages/milo/plugins/item/recipeTab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/recipeTab.lua",
-        "hash": "3500389881"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/recipeTab.lua"
     },
     {
         "path": "packages/milo/plugins/item/resetTab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/resetTab.lua",
-        "hash": "3437976922"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/resetTab.lua"
     },
     {
         "path": "packages/milo/plugins/item/infoTab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/infoTab.lua",
-        "hash": "2369357398"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/plugins/item/infoTab.lua"
     },
     {
         "path": "packages/milo/apis/taskRunner.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/taskRunner.lua",
-        "hash": "3813039172"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/taskRunner.lua"
     },
     {
         "path": "packages/milo/apis/storage.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/storage.lua",
-        "hash": "609432260"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/storage.lua"
     },
     {
         "path": "packages/milo/apis/miniAdapter.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/miniAdapter.lua",
-        "hash": "1847117594"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/miniAdapter.lua"
     },
     {
         "path": "packages/milo/apis/init.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/init.lua",
-        "hash": "1546095106"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/init.lua"
     },
     {
         "path": "packages/milo/apis/craft2.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/craft2.lua",
-        "hash": "1138252650"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/milo/apis/craft2.lua"
     },
     {
         "path": "packages/lzwfs/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/.package",
-        "hash": "2032328710"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/.package"
     },
     {
         "path": "packages/lzwfs/lzwfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/lzwfs.lua",
-        "hash": "3813433546"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/lzwfs.lua"
     },
     {
         "path": "packages/lzwfs/startup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/startup.lua",
-        "hash": "1312346623"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/startup.lua"
     },
     {
         "path": "packages/lzwfs/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/etc/fstab",
-        "hash": "71401159"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/etc/fstab"
     },
     {
         "path": "packages/lzwfs/system/lzwfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/system/lzwfs.lua",
-        "hash": "1626425760"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lzwfs/system/lzwfs.lua"
     },
     {
         "path": "packages/lpeg/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lpeg/.package",
-        "hash": "1079104314"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lpeg/.package"
     },
     {
         "path": "packages/lpeg/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lpeg/etc/fstab",
-        "hash": "2383192123"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lpeg/etc/fstab"
     },
     {
         "path": "packages/neural/neuralLook.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/neuralLook.lua",
-        "hash": "1795061973"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/neuralLook.lua"
     },
     {
         "path": "packages/neural/mobFollow.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/mobFollow.lua",
-        "hash": "3280259707"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/mobFollow.lua"
     },
     {
         "path": "packages/neural/mobPickup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/mobPickup.lua",
-        "hash": "2704054620"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/mobPickup.lua"
     },
     {
         "path": "packages/neural/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/.package",
-        "hash": "2975550616"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/.package"
     },
     {
         "path": "packages/neural/neuralReplay.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/neuralReplay.lua",
-        "hash": "2301966492"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/neuralReplay.lua"
     },
     {
         "path": "packages/neural/disableAI.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/disableAI.lua",
-        "hash": "356280351"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/disableAI.lua"
     },
     {
         "path": "packages/neural/Sensor.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/Sensor.lua",
-        "hash": "1867966163"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/Sensor.lua"
     },
     {
         "path": "packages/neural/Scanner.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/Scanner.lua",
-        "hash": "4055336754"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/Scanner.lua"
     },
     {
         "path": "packages/neural/shootingGallery.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/shootingGallery.lua",
-        "hash": "2422693402"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/shootingGallery.lua"
     },
     {
         "path": "packages/neural/elytraFly.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/elytraFly.lua",
-        "hash": "1091121591"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/elytraFly.lua"
     },
     {
         "path": "packages/neural/mobRancher.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/mobRancher.lua",
-        "hash": "2481517122"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/mobRancher.lua"
     },
     {
         "path": "packages/neural/ores.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/ores.lua",
-        "hash": "169064990"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/ores.lua"
     },
     {
         "path": "packages/neural/canvasServer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/canvasServer.lua",
-        "hash": "4051657403"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/canvasServer.lua"
     },
     {
         "path": "packages/neural/nwm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/nwm.lua",
-        "hash": "1274017791"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/nwm.lua"
     },
     {
         "path": "packages/neural/neuralRecorder.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/neuralRecorder.lua",
-        "hash": "3936878018"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/neuralRecorder.lua"
     },
     {
         "path": "packages/neural/fisher.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/fisher.lua",
-        "hash": "2449658686"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/fisher.lua"
     },
     {
         "path": "packages/neural/dropNeural.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/dropNeural.lua",
-        "hash": "3856829107"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/dropNeural.lua"
     },
     {
         "path": "packages/neural/Equipment.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/Equipment.lua",
-        "hash": "3340080316"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/Equipment.lua"
     },
     {
         "path": "packages/neural/autorun/splash.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/autorun/splash.lua",
-        "hash": "555172796"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/autorun/splash.lua"
     },
     {
         "path": "packages/neural/autorun/interface.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/autorun/interface.lua",
-        "hash": "1473685164"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/autorun/interface.lua"
     },
     {
         "path": "packages/neural/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/etc/apps.db",
-        "hash": "4017450977"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/etc/apps.db"
     },
     {
         "path": "packages/neural/apis/glasses.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/glasses.lua",
-        "hash": "4205990999"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/glasses.lua"
     },
     {
         "path": "packages/neural/apis/angle.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/angle.lua",
-        "hash": "1072289370"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/angle.lua"
     },
     {
         "path": "packages/neural/apis/mobs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/mobs.lua",
-        "hash": "233321653"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/mobs.lua"
     },
     {
         "path": "packages/neural/apis/statemachine.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/statemachine.lua",
-        "hash": "3556790923"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/statemachine.lua"
     },
     {
         "path": "packages/neural/apis/interface.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/interface.lua",
-        "hash": "1559603337"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/neural/apis/interface.lua"
     },
     {
         "path": "packages/swshop/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/.package",
-        "hash": "1370285356"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/.package"
     },
     {
         "path": "packages/swshop/shopTab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopTab.lua",
-        "hash": "1831624767"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopTab.lua"
     },
     {
         "path": "packages/swshop/shopView-example.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopView-example.lua",
-        "hash": "728138169"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopView-example.lua"
     },
     {
         "path": "packages/swshop/swshop.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/swshop.lua",
-        "hash": "3874583880"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/swshop.lua"
     },
     {
         "path": "packages/swshop/shopView.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopView.lua",
-        "hash": "3261912115"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopView.lua"
     },
     {
         "path": "packages/swshop/installPlugin.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/installPlugin.lua",
-        "hash": "1001377638"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/installPlugin.lua"
     },
     {
         "path": "packages/swshop/Shoplogs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/Shoplogs.lua",
-        "hash": "400982226"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/Shoplogs.lua"
     },
     {
         "path": "packages/swshop/shopConfig.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopConfig.lua",
-        "hash": "1019014649"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/shopConfig.lua"
     },
     {
         "path": "packages/swshop/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/etc/apps.db",
-        "hash": "3195290999"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/etc/apps.db"
     },
     {
         "path": "packages/swshop/help/swshop.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/help/swshop.txt",
-        "hash": "1168691312"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/help/swshop.txt"
     },
     {
         "path": "packages/swshop/apis/krist.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/krist.lua",
-        "hash": "2266167940"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/krist.lua"
     },
     {
         "path": "packages/swshop/apis/k.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/k.lua",
-        "hash": "3139416186"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/k.lua"
     },
     {
         "path": "packages/swshop/apis/jua.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/jua.lua",
-        "hash": "3811254596"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/jua.lua"
     },
     {
         "path": "packages/swshop/apis/w.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/w.lua",
-        "hash": "2136671070"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/w.lua"
     },
     {
         "path": "packages/swshop/apis/r.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/r.lua",
-        "hash": "57441535"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/swshop/apis/r.lua"
     },
     {
         "path": "packages/turtle/canvasClient.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/canvasClient.lua",
-        "hash": "3369579567"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/canvasClient.lua"
     },
     {
         "path": "packages/turtle/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/.package",
-        "hash": "1422690076"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/.package"
     },
     {
         "path": "packages/turtle/t.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/t.lua",
-        "hash": "2061572143"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/t.lua"
     },
     {
         "path": "packages/turtle/obsidian.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/obsidian.lua",
-        "hash": "2177103119"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/obsidian.lua"
     },
     {
         "path": "packages/turtle/lavaRefuel.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/lavaRefuel.lua",
-        "hash": "1542695619"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/lavaRefuel.lua"
     },
     {
         "path": "packages/turtle/autorun/startup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/autorun/startup.lua",
-        "hash": "2810832957"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/autorun/startup.lua"
     },
     {
         "path": "packages/turtle/init/6.tl3.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/init/6.tl3.lua",
-        "hash": "4112054779"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/init/6.tl3.lua"
     },
     {
         "path": "packages/turtle/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/etc/apps.db",
-        "hash": "4073652913"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/etc/apps.db"
     },
     {
         "path": "packages/turtle/system/turtle.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/system/turtle.lua",
-        "hash": "1904095542"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/system/turtle.lua"
     },
     {
         "path": "packages/turtle/apis/equipper.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/equipper.lua",
-        "hash": "1441776261"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/equipper.lua"
     },
     {
         "path": "packages/turtle/apis/pathfind.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/pathfind.lua",
-        "hash": "3606010728"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/pathfind.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/pathfinder.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/pathfinder.lua",
-        "hash": "3937427388"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/pathfinder.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/grid.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/grid.lua",
-        "hash": "2475209293"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/grid.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/core/bheap.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/bheap.lua",
-        "hash": "2423207332"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/bheap.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/core/utils.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/utils.lua",
-        "hash": "358326721"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/utils.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/core/node.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/node.lua",
-        "hash": "3478092104"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/node.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/core/path.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/path.lua",
-        "hash": "64132809"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/core/path.lua"
     },
     {
         "path": "packages/turtle/apis/jumper/search/astar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/search/astar.lua",
-        "hash": "1432250492"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/turtle/apis/jumper/search/astar.lua"
     },
     {
         "path": "packages/screenSaver/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/.package",
-        "hash": "2786388887"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/.package"
     },
     {
         "path": "packages/screenSaver/autorun/saver.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/autorun/saver.lua",
-        "hash": "3314242276"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/autorun/saver.lua"
     },
     {
         "path": "packages/screenSaver/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/etc/fstab",
-        "hash": "2921918284"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/etc/fstab"
     },
     {
         "path": "packages/screenSaver/savers/life.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/savers/life.lua",
-        "hash": "2231471396"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/savers/life.lua"
     },
     {
         "path": "packages/screenSaver/system/saver.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/system/saver.lua",
-        "hash": "60432241"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/screenSaver/system/saver.lua"
     },
     {
         "path": "packages/gps/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/gps/.package",
-        "hash": "2739267499"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/gps/.package"
     },
     {
         "path": "packages/gps/gpsServer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/gps/gpsServer.lua",
-        "hash": "2268131576"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/gps/gpsServer.lua"
     },
     {
         "path": "packages/pl/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/.package",
-        "hash": "480425195"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/.package"
     },
     {
         "path": "packages/pl/init/6.penlight.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/init/6.penlight.lua",
-        "hash": "2654425390"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/init/6.penlight.lua"
     },
     {
         "path": "packages/pl/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/etc/fstab",
-        "hash": "3028616681"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/etc/fstab"
     },
     {
         "path": "packages/pl/apis/path.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/apis/path.lua",
-        "hash": "2285988232"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/apis/path.lua"
     },
     {
         "path": "packages/pl/apis/compat.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/apis/compat.lua",
-        "hash": "600555099"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/pl/apis/compat.lua"
     },
     {
         "path": "packages/shellex/touch.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/touch.lua",
-        "hash": "1236587282"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/touch.lua"
     },
     {
         "path": "packages/shellex/head.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/head.lua",
-        "hash": "1548915415"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/head.lua"
     },
     {
         "path": "packages/shellex/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/.package",
-        "hash": "1396668054"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/.package"
     },
     {
         "path": "packages/shellex/ls.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/ls.lua",
-        "hash": "422840404"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/ls.lua"
     },
     {
         "path": "packages/shellex/du.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/du.lua",
-        "hash": "466688297"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/du.lua"
     },
     {
         "path": "packages/shellex/cp.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/cp.lua",
-        "hash": "366249482"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/cp.lua"
     },
     {
         "path": "packages/shellex/cat.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/cat.lua",
-        "hash": "2795164611"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/cat.lua"
     },
     {
         "path": "packages/shellex/dmesg.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/dmesg.lua",
-        "hash": "3349586571"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/dmesg.lua"
     },
     {
         "path": "packages/shellex/hostname.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/hostname.lua",
-        "hash": "769649139"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/hostname.lua"
     },
     {
         "path": "packages/shellex/which.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/which.lua",
-        "hash": "2344479492"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/which.lua"
     },
     {
         "path": "packages/shellex/find.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/find.lua",
-        "hash": "2879809826"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/find.lua"
     },
     {
         "path": "packages/shellex/time.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/time.lua",
-        "hash": "117510095"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/time.lua"
     },
     {
         "path": "packages/shellex/mv.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/mv.lua",
-        "hash": "3596508073"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/mv.lua"
     },
     {
         "path": "packages/shellex/ln.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/ln.lua",
-        "hash": "2647452841"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/ln.lua"
     },
     {
         "path": "packages/shellex/less.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/less.lua",
-        "hash": "3074621937"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/less.lua"
     },
     {
         "path": "packages/shellex/rmdir.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/rmdir.lua",
-        "hash": "564551403"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/rmdir.lua"
     },
     {
         "path": "packages/shellex/rm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/rm.lua",
-        "hash": "634629708"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/rm.lua"
     },
     {
         "path": "packages/shellex/df.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/df.lua",
-        "hash": "4282270995"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/df.lua"
     },
     {
         "path": "packages/shellex/grep.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/grep.lua",
-        "hash": "4176941614"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/grep.lua"
     },
     {
         "path": "packages/shellex/autorun/startup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/autorun/startup.lua",
-        "hash": "454622996"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/autorun/startup.lua"
     },
     {
         "path": "packages/shellex/apis/shell.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/shell.lua",
-        "hash": "2176759306"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/shell.lua"
     },
     {
         "path": "packages/shellex/apis/unicode.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/unicode.lua",
-        "hash": "3254318468"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/unicode.lua"
     },
     {
         "path": "packages/shellex/apis/tty.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/tty.lua",
-        "hash": "1113790874"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/tty.lua"
     },
     {
         "path": "packages/shellex/apis/computer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/computer.lua",
-        "hash": "405280330"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/computer.lua"
     },
     {
         "path": "packages/shellex/apis/filesystem.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/filesystem.lua",
-        "hash": "635787756"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/filesystem.lua"
     },
     {
         "path": "packages/shellex/apis/glob.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/glob.lua",
-        "hash": "2139555358"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/glob.lua"
     },
     {
         "path": "packages/shellex/apis/keyboard.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/keyboard.lua",
-        "hash": "569973738"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/keyboard.lua"
     },
     {
         "path": "packages/shellex/apis/sh.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/sh.lua",
-        "hash": "1257346117"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/sh.lua"
     },
     {
         "path": "packages/shellex/apis/text.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/text.lua",
-        "hash": "2438924457"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/text.lua"
     },
     {
         "path": "packages/shellex/apis/transfer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/transfer.lua",
-        "hash": "3402418210"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/transfer.lua"
     },
     {
         "path": "packages/shellex/apis/globtopattern.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/globtopattern.lua",
-        "hash": "869937673"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/globtopattern.lua"
     },
     {
         "path": "packages/shellex/apis/term.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/term.lua",
-        "hash": "3474077666"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/term.lua"
     },
     {
         "path": "packages/shellex/apis/transforms.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/transforms.lua",
-        "hash": "744021154"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/shellex/apis/transforms.lua"
     },
     {
         "path": "packages/debugger/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/.package",
-        "hash": "3620138890"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/.package"
     },
     {
         "path": "packages/debugger/debug.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/debug.lua",
-        "hash": "925016615"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/debug.lua"
     },
     {
         "path": "packages/debugger/autorun/startup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/autorun/startup.lua",
-        "hash": "200786396"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/autorun/startup.lua"
     },
     {
         "path": "packages/debugger/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/etc/apps.db",
-        "hash": "2147972124"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/etc/apps.db"
     },
     {
         "path": "packages/debugger/help/debug.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/help/debug.txt",
-        "hash": "2224661100"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/help/debug.txt"
     },
     {
         "path": "packages/debugger/apis/init.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/apis/init.lua",
-        "hash": "1545638596"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/debugger/apis/init.lua"
     },
     {
         "path": "packages/moonscript/T.moon",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/T.moon",
-        "hash": "2328546126"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/T.moon"
     },
     {
         "path": "packages/moonscript/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/.package",
-        "hash": "957020917"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/.package"
     },
     {
         "path": "packages/moonscript/moon.works",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/moon.works",
-        "hash": "2388568669"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/moon.works"
     },
     {
         "path": "packages/moonscript/moonc.works",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/moonc.works",
-        "hash": "303558860"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/moonc.works"
     },
     {
         "path": "packages/moonscript/autorun/startup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/autorun/startup.lua",
-        "hash": "2215305449"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/autorun/startup.lua"
     },
     {
         "path": "packages/moonscript/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/etc/fstab",
-        "hash": "3201923121"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/moonscript/etc/fstab"
     },
     {
         "path": "packages/minify/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/minify/.package",
-        "hash": "347900128"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/minify/.package"
     },
     {
         "path": "packages/minify/minifyDir.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/minify/minifyDir.lua",
-        "hash": "2970844699"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/minify/minifyDir.lua"
     },
     {
         "path": "packages/minify/minify.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/minify/minify.lua",
-        "hash": "1861784415"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/minify/minify.lua"
     },
     {
         "path": "packages/secure/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/.package",
-        "hash": "2045641550"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/.package"
     },
     {
         "path": "packages/secure/unlock.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/unlock.lua",
-        "hash": "3472985355"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/unlock.lua"
     },
     {
         "path": "packages/secure/autorun/lock.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/autorun/lock.lua",
-        "hash": "4182459477"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/autorun/lock.lua"
     },
     {
         "path": "packages/secure/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/etc/fstab",
-        "hash": "1054041708"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/etc/fstab"
     },
     {
         "path": "packages/secure/system/secure.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/system/secure.lua",
-        "hash": "82204172"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/secure/system/secure.lua"
     },
     {
         "path": "packages/recipeBook/recipeBook.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/recipeBook.lua",
-        "hash": "3012577369"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/recipeBook.lua"
     },
     {
         "path": "packages/recipeBook/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/.package",
-        "hash": "2989891473"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/.package"
     },
     {
         "path": "packages/recipeBook/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/etc/apps.db",
-        "hash": "3099080190"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/etc/apps.db"
     },
     {
         "path": "packages/recipeBook/etc/recipeBook.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/etc/recipeBook.db",
-        "hash": "3016982430"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/etc/recipeBook.db"
     },
     {
         "path": "packages/recipeBook/etc/recipes/minecraft.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/etc/recipes/minecraft.db",
-        "hash": "2790360132"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/recipeBook/etc/recipes/minecraft.db"
     },
     {
         "path": "packages/miners/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/.package",
-        "hash": "254231310"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/.package"
     },
     {
         "path": "packages/miners/scanningMiner.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/scanningMiner.lua",
-        "hash": "1908372584"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/scanningMiner.lua"
     },
     {
         "path": "packages/miners/findSwarm.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/findSwarm.lua",
-        "hash": "2543048638"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/findSwarm.lua"
     },
     {
         "path": "packages/miners/simpleMiner.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/simpleMiner.lua",
-        "hash": "1918158552"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/simpleMiner.lua"
     },
     {
         "path": "packages/miners/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/etc/apps.db",
-        "hash": "221193827"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/etc/apps.db"
     },
     {
         "path": "packages/miners/help/simpleMiner.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/help/simpleMiner.txt",
-        "hash": "2570922215"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/help/simpleMiner.txt"
     },
     {
         "path": "packages/miners/help/scanningMiner.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/help/scanningMiner.txt",
-        "hash": "2235406593"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miners/help/scanningMiner.txt"
     },
     {
         "path": "packages/common/multiMiner.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/multiMiner.lua",
-        "hash": "1471141458"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/multiMiner.lua"
     },
     {
         "path": "packages/common/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/.package",
-        "hash": "590158537"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/.package"
     },
     {
         "path": "packages/common/edit.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/edit.lua",
-        "hash": "2226993445"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/edit.lua"
     },
     {
         "path": "packages/common/Follow.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Follow.lua",
-        "hash": "656713261"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Follow.lua"
     },
     {
         "path": "packages/common/Events.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Events.lua",
-        "hash": "2399501283"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Events.lua"
     },
     {
         "path": "packages/common/ascii.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/ascii.lua",
-        "hash": "2315435400"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/ascii.lua"
     },
     {
         "path": "packages/common/recorder.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/recorder.lua",
-        "hash": "1292194318"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/recorder.lua"
     },
     {
         "path": "packages/common/DiskCopy.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/DiskCopy.lua",
-        "hash": "3494001381"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/DiskCopy.lua"
     },
     {
         "path": "packages/common/Devices.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Devices.lua",
-        "hash": "841906925"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Devices.lua"
     },
     {
         "path": "packages/common/debugMonitor.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/debugMonitor.lua",
-        "hash": "3511950488"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/debugMonitor.lua"
     },
     {
         "path": "packages/common/SoundPlayer.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/SoundPlayer.lua",
-        "hash": "1236586780"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/SoundPlayer.lua"
     },
     {
         "path": "packages/common/Turtles.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Turtles.lua",
-        "hash": "1563521038"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Turtles.lua"
     },
     {
         "path": "packages/common/Appstore.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Appstore.lua",
-        "hash": "3871563908"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Appstore.lua"
     },
     {
         "path": "packages/common/autorun/common.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/autorun/common.lua",
-        "hash": "3290576531"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/autorun/common.lua"
     },
     {
         "path": "packages/common/etc/sounds.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/sounds.txt",
-        "hash": "3456460235"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/sounds.txt"
     },
     {
         "path": "packages/common/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/apps.db",
-        "hash": "646408794"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/apps.db"
     },
     {
         "path": "packages/common/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/fstab",
-        "hash": "2040700755"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/fstab"
     },
     {
         "path": "packages/common/etc/scripts/summon",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/summon",
-        "hash": "1233064830"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/summon"
     },
     {
         "path": "packages/common/etc/scripts/shutdown",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/shutdown",
-        "hash": "3165980705"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/shutdown"
     },
     {
         "path": "packages/common/etc/scripts/setHome",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/setHome",
-        "hash": "2145206801"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/setHome"
     },
     {
         "path": "packages/common/etc/scripts/goHome",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/goHome",
-        "hash": "3122476893"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/goHome"
     },
     {
         "path": "packages/common/etc/scripts/abort",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/abort",
-        "hash": "2637187761"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/abort"
     },
     {
         "path": "packages/common/etc/scripts/reboot",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/reboot",
-        "hash": "3206147120"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/reboot"
     },
     {
         "path": "packages/common/etc/scripts/moveTo.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/moveTo.lua",
-        "hash": "416535521"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/etc/scripts/moveTo.lua"
     },
     {
         "path": "packages/miloApps/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/.package",
-        "hash": "3605320918"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/.package"
     },
     {
         "path": "packages/miloApps/apps/enderchest.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/enderchest.lua",
-        "hash": "1440407945"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/enderchest.lua"
     },
     {
         "path": "packages/miloApps/apps/brewArray.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/brewArray.lua",
-        "hash": "2344950773"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/brewArray.lua"
     },
     {
         "path": "packages/miloApps/apps/furni.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/furni.lua",
-        "hash": "3296586474"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/furni.lua"
     },
     {
         "path": "packages/miloApps/apps/cobblegen.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/cobblegen.lua",
-        "hash": "2156894970"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/cobblegen.lua"
     },
     {
         "path": "packages/miloApps/apps/furniController.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/furniController.lua",
-        "hash": "3535981812"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/furniController.lua"
     },
     {
         "path": "packages/miloApps/apps/water.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/water.lua",
-        "hash": "3627330916"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/miloApps/apps/water.lua"
     },
     {
         "path": "packages/lfs/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lfs/.package",
-        "hash": "1667307826"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lfs/.package"
     },
     {
         "path": "packages/lfs/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lfs/etc/fstab",
-        "hash": "384705322"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lfs/etc/fstab"
     },
     {
         "path": "packages/lfs/apis/init.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lfs/apis/init.lua",
-        "hash": "1761033021"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/lfs/apis/init.lua"
     },
     {
         "path": "packages/cash/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/cash/.package",
-        "hash": "2308081544"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/cash/.package"
     },
     {
         "path": "packages/cash/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/cash/etc/apps.db",
-        "hash": "3324784653"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/cash/etc/apps.db"
     },
     {
         "path": "packages/cash/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/cash/etc/fstab",
-        "hash": "894882195"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/cash/etc/fstab"
     },
     {
         "path": "packages/ccemux/.package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/.package",
-        "hash": "462085549"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/.package"
     },
     {
         "path": "packages/ccemux/autorun/startup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/autorun/startup.lua",
-        "hash": "1281123748"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/autorun/startup.lua"
     },
     {
         "path": "packages/ccemux/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/etc/apps.db",
-        "hash": "608642753"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/etc/apps.db"
     },
     {
         "path": "packages/ccemux/bin/emustartup.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/bin/emustartup.lua",
-        "hash": "4024375387"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/bin/emustartup.lua"
     },
     {
         "path": "packages/ccemux/bin/emustartup.moon",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/bin/emustartup.moon",
-        "hash": "4263364033"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/bin/emustartup.moon"
     },
     {
         "path": "packages/ccemux/system/ccemux.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/system/ccemux.lua",
-        "hash": "347867251"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/ccemux/system/ccemux.lua"
     },
     {
         "path": "icons/Code",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/Code",
-        "hash": "904356246"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/Code"
     },
     {
         "path": "icons/shopLogs",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/shopLogs",
-        "hash": "3546051321"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/shopLogs"
     },
     {
         "path": "icons/debug",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/debug",
-        "hash": "1241732377"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/debug"
     },
     {
         "path": "icons/sniff",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/sniff",
-        "hash": "1918857779"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/sniff"
     },
     {
         "path": "icons/data",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/data",
-        "hash": "3048840400"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/data"
     },
     {
         "path": "icons/othello",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/othello",
-        "hash": "1878318145"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/othello"
     },
     {
         "path": "icons/chatEnchant",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/chatEnchant",
-        "hash": "492470022"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/chatEnchant"
     },
     {
         "path": "icons/write",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/write",
-        "hash": "1212504616"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/write"
     },
     {
         "path": "icons/sameGame",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/sameGame",
-        "hash": "1607578598"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/sameGame"
     },
     {
         "path": "icons/config",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/config",
-        "hash": "3649032524"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/config"
     },
     {
         "path": "icons/ascii",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/ascii",
-        "hash": "3548423615"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/ascii"
     },
     {
         "path": "icons/partitions",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/partitions",
-        "hash": "1532062649"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/partitions"
     },
     {
         "path": "icons/packages",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/packages",
-        "hash": "386408789"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/packages"
     },
     {
         "path": "icons/paint",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/paint",
-        "hash": "2211578739"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/paint"
     },
     {
         "path": "icons/diskCopy",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/diskCopy",
-        "hash": "3963616544"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/diskCopy"
     },
     {
         "path": "icons/sound",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/sound",
-        "hash": "2946066682"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/sound"
     },
     {
         "path": "icons/recepieBook",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/recepieBook",
-        "hash": "2596288881"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/recepieBook"
     },
     {
         "path": "icons/hexEdit",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/hexEdit",
-        "hash": "71192498"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/hexEdit"
     },
     {
         "path": "icons/tron",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/tron",
-        "hash": "1916682315"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/tron"
     },
     {
         "path": "icons/Evevnts",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/Evevnts",
-        "hash": "865013928"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/Evevnts"
     },
     {
         "path": "icons/cash-Bash",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/cash-Bash",
-        "hash": "830880209"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/icons/cash-Bash"
     },
     {
         "path": ".painapi/painconfig",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.painapi/painconfig",
-        "hash": "2467711258"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.painapi/painconfig"
     },
     {
         "path": "sys/kernel.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/kernel.lua",
-        "hash": "2189208359"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/kernel.lua"
     },
     {
         "path": "sys/boot/opus.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/boot/opus.lua",
-        "hash": "3597982577"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/boot/opus.lua"
     },
     {
         "path": "sys/boot/kiosk.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/boot/kiosk.lua",
-        "hash": "4223446632"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/boot/kiosk.lua"
     },
     {
         "path": "sys/boot/tlco.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/boot/tlco.lua",
-        "hash": "1803044720"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/boot/tlco.lua"
     },
     {
         "path": "sys/autorun/welcome.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/welcome.lua",
-        "hash": "1880090781"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/welcome.lua"
     },
     {
         "path": "sys/autorun/complete.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/complete.lua",
-        "hash": "1152628063"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/complete.lua"
     },
     {
         "path": "sys/autorun/hotkeys.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/hotkeys.lua",
-        "hash": "1182419475"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/hotkeys.lua"
     },
     {
         "path": "sys/autorun/version.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/version.lua",
-        "hash": "1505671409"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/version.lua"
     },
     {
         "path": "sys/autorun/log.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/log.lua",
-        "hash": "3174972591"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/log.lua"
     },
     {
         "path": "sys/autorun/clipboard.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/clipboard.lua",
-        "hash": "3174762753"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/autorun/clipboard.lua"
     },
     {
         "path": "sys/init/1.device.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/1.device.lua",
-        "hash": "157977136"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/1.device.lua"
     },
     {
         "path": "sys/init/7.multishell.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/7.multishell.lua",
-        "hash": "1795646512"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/7.multishell.lua"
     },
     {
         "path": "sys/init/5.network.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/5.network.lua",
-        "hash": "224853971"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/5.network.lua"
     },
     {
         "path": "sys/init/3.relay.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/3.relay.lua",
-        "hash": "2136726688"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/3.relay.lua"
     },
     {
         "path": "sys/init/3.sys.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/3.sys.lua",
-        "hash": "52113631"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/3.sys.lua"
     },
     {
         "path": "sys/init/2.vfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/2.vfs.lua",
-        "hash": "284353043"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/2.vfs.lua"
     },
     {
         "path": "sys/init/4.user.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/4.user.lua",
-        "hash": "3586316949"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/4.user.lua"
     },
     {
         "path": "sys/init/3.modules.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/3.modules.lua",
-        "hash": "2579696159"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/3.modules.lua"
     },
     {
         "path": "sys/init/6.packages.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/6.packages.lua",
-        "hash": "2489988029"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/6.packages.lua"
     },
     {
         "path": "sys/init/4.label.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/4.label.lua",
-        "hash": "3457209636"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/4.label.lua"
     },
     {
         "path": "sys/init/5.unpackage.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/5.unpackage.lua",
-        "hash": "1497740940"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/init/5.unpackage.lua"
     },
     {
         "path": "sys/etc/apps.db",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/etc/apps.db",
-        "hash": "2483811550"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/etc/apps.db"
     },
     {
         "path": "sys/etc/fstab",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/etc/fstab",
-        "hash": "2410539182"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/etc/fstab"
     },
     {
         "path": "sys/modules/opus/sound.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/sound.lua",
-        "hash": "1719370693"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/sound.lua"
     },
     {
         "path": "sys/modules/opus/array.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/array.lua",
-        "hash": "884055491"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/array.lua"
     },
     {
         "path": "sys/modules/opus/gps.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/gps.lua",
-        "hash": "2637530468"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/gps.lua"
     },
     {
         "path": "sys/modules/opus/event.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/event.lua",
-        "hash": "3372272275"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/event.lua"
     },
     {
         "path": "sys/modules/opus/map.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/map.lua",
-        "hash": "429298638"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/map.lua"
     },
     {
         "path": "sys/modules/opus/ui.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui.lua",
-        "hash": "517200366"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui.lua"
     },
     {
         "path": "sys/modules/opus/config.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/config.lua",
-        "hash": "2565955221"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/config.lua"
     },
     {
         "path": "sys/modules/opus/git.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/git.lua",
-        "hash": "2392324628"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/git.lua"
     },
     {
         "path": "sys/modules/opus/input.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/input.lua",
-        "hash": "593278721"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/input.lua"
     },
     {
         "path": "sys/modules/opus/sync.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/sync.lua",
-        "hash": "4121599008"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/sync.lua"
     },
     {
         "path": "sys/modules/opus/packages.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/packages.lua",
-        "hash": "2172456857"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/packages.lua"
     },
     {
         "path": "sys/modules/opus/util.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/util.lua",
-        "hash": "2236207274"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/util.lua"
     },
     {
         "path": "sys/modules/opus/bulkget.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/bulkget.lua",
-        "hash": "2315664511"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/bulkget.lua"
     },
     {
         "path": "sys/modules/opus/security.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/security.lua",
-        "hash": "138825385"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/security.lua"
     },
     {
         "path": "sys/modules/opus/class.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/class.lua",
-        "hash": "2258187781"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/class.lua"
     },
     {
         "path": "sys/modules/opus/terminal.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/terminal.lua",
-        "hash": "1118500163"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/terminal.lua"
     },
     {
         "path": "sys/modules/opus/cbor.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/cbor.lua",
-        "hash": "1971774767"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/cbor.lua"
     },
     {
         "path": "sys/modules/opus/entry.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/entry.lua",
-        "hash": "842082678"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/entry.lua"
     },
     {
         "path": "sys/modules/opus/nft.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/nft.lua",
-        "hash": "1163780657"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/nft.lua"
     },
     {
         "path": "sys/modules/opus/trace.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/trace.lua",
-        "hash": "1601367339"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/trace.lua"
     },
     {
         "path": "sys/modules/opus/ansi.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ansi.lua",
-        "hash": "1682005282"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ansi.lua"
     },
     {
         "path": "sys/modules/opus/peripheral.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/peripheral.lua",
-        "hash": "2377412366"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/peripheral.lua"
     },
     {
         "path": "sys/modules/opus/injector.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/injector.lua",
-        "hash": "2216522658"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/injector.lua"
     },
     {
         "path": "sys/modules/opus/socket.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/socket.lua",
-        "hash": "2693362992"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/socket.lua"
     },
     {
         "path": "sys/modules/opus/fuzzy.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fuzzy.lua",
-        "hash": "3102500463"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fuzzy.lua"
     },
     {
         "path": "sys/modules/opus/history.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/history.lua",
-        "hash": "3901032432"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/history.lua"
     },
     {
         "path": "sys/modules/opus/point.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/point.lua",
-        "hash": "3495447299"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/point.lua"
     },
     {
         "path": "sys/modules/opus/json.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/json.lua",
-        "hash": "1334185955"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/json.lua"
     },
     {
         "path": "sys/modules/opus/fs/gitfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/gitfs.lua",
-        "hash": "510601687"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/gitfs.lua"
     },
     {
         "path": "sys/modules/opus/fs/linkfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/linkfs.lua",
-        "hash": "979235388"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/linkfs.lua"
     },
     {
         "path": "sys/modules/opus/fs/netfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/netfs.lua",
-        "hash": "1556622442"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/netfs.lua"
     },
     {
         "path": "sys/modules/opus/fs/urlfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/urlfs.lua",
-        "hash": "4076400284"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/urlfs.lua"
     },
     {
         "path": "sys/modules/opus/fs/ramfs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/ramfs.lua",
-        "hash": "1685959527"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/fs/ramfs.lua"
     },
     {
         "path": "sys/modules/opus/compress/lzw.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/compress/lzw.lua",
-        "hash": "413822597"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/compress/lzw.lua"
     },
     {
         "path": "sys/modules/opus/compress/tar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/compress/tar.lua",
-        "hash": "1535169612"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/compress/tar.lua"
     },
     {
         "path": "sys/modules/opus/ui/tween.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/tween.lua",
-        "hash": "2918277693"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/tween.lua"
     },
     {
         "path": "sys/modules/opus/ui/canvas.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/canvas.lua",
-        "hash": "1727402055"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/canvas.lua"
     },
     {
         "path": "sys/modules/opus/ui/transition.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/transition.lua",
-        "hash": "4266552096"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/transition.lua"
     },
     {
         "path": "sys/modules/opus/ui/blit.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/blit.lua",
-        "hash": "256845833"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/blit.lua"
     },
     {
         "path": "sys/modules/opus/ui/region.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/region.lua",
-        "hash": "362909284"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/region.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/CheckboxGrid.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/CheckboxGrid.lua",
-        "hash": "2766143648"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/CheckboxGrid.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/QuickSelect.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/QuickSelect.lua",
-        "hash": "2825313905"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/QuickSelect.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/ScrollBar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/ScrollBar.lua",
-        "hash": "2881072093"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/ScrollBar.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Dialog.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Dialog.lua",
-        "hash": "1697296024"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Dialog.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/MenuItem.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/MenuItem.lua",
-        "hash": "2093195771"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/MenuItem.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Button.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Button.lua",
-        "hash": "68448756"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Button.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/StatusBar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/StatusBar.lua",
-        "hash": "2848646891"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/StatusBar.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/ProgressBar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/ProgressBar.lua",
-        "hash": "119044984"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/ProgressBar.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Image.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Image.lua",
-        "hash": "2208718034"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Image.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Question.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Question.lua",
-        "hash": "3244879082"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Question.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Slider.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Slider.lua",
-        "hash": "3488074730"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Slider.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Tab.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Tab.lua",
-        "hash": "541616627"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Tab.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/FlatButton.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/FlatButton.lua",
-        "hash": "1419142191"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/FlatButton.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/DropMenu.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/DropMenu.lua",
-        "hash": "1321022361"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/DropMenu.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Viewport.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Viewport.lua",
-        "hash": "270245601"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Viewport.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Text.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Text.lua",
-        "hash": "176819147"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Text.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/WizardPage.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/WizardPage.lua",
-        "hash": "2684200375"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/WizardPage.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Wizard.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Wizard.lua",
-        "hash": "2715533006"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Wizard.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/TabBar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TabBar.lua",
-        "hash": "1485108196"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TabBar.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/MenuBar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/MenuBar.lua",
-        "hash": "2172028061"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/MenuBar.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Chooser.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Chooser.lua",
-        "hash": "2126320136"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Chooser.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Notification.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Notification.lua",
-        "hash": "250671112"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Notification.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Tabs.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Tabs.lua",
-        "hash": "304190014"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Tabs.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/TextEntry.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TextEntry.lua",
-        "hash": "3445041804"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TextEntry.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Menu.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Menu.lua",
-        "hash": "1042305884"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Menu.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Checkbox.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Checkbox.lua",
-        "hash": "2353818370"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Checkbox.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/TitleBar.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TitleBar.lua",
-        "hash": "3504165028"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TitleBar.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/DropMenuItem.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/DropMenuItem.lua",
-        "hash": "2025481387"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/DropMenuItem.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Form.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Form.lua",
-        "hash": "1740447229"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Form.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Embedded.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Embedded.lua",
-        "hash": "4122240694"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Embedded.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Grid.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Grid.lua",
-        "hash": "359055806"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Grid.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Throttle.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Throttle.lua",
-        "hash": "1679262901"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Throttle.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/TextArea.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TextArea.lua",
-        "hash": "1798498309"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TextArea.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/SlideOut.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/SlideOut.lua",
-        "hash": "2036866370"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/SlideOut.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/NftImage.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/NftImage.lua",
-        "hash": "209925429"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/NftImage.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/ScrollingGrid.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/ScrollingGrid.lua",
-        "hash": "154585821"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/ScrollingGrid.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/Page.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Page.lua",
-        "hash": "4227572419"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/Page.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/VerticalMeter.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/VerticalMeter.lua",
-        "hash": "4073428999"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/VerticalMeter.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/TabBarMenuItem.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TabBarMenuItem.lua",
-        "hash": "3732817157"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/TabBarMenuItem.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/MiniSlideOut.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/MiniSlideOut.lua",
-        "hash": "3297110426"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/MiniSlideOut.lua"
     },
     {
         "path": "sys/modules/opus/ui/components/FileSelect.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/FileSelect.lua",
-        "hash": "2425413065"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/ui/components/FileSelect.lua"
     },
     {
         "path": "sys/modules/opus/crypto/sha2.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/sha2.lua",
-        "hash": "2317537613"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/sha2.lua"
     },
     {
         "path": "sys/modules/opus/crypto/chacha20.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/chacha20.lua",
-        "hash": "147316971"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/chacha20.lua"
     },
     {
         "path": "sys/modules/opus/crypto/ecc/fp.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/fp.lua",
-        "hash": "366477383"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/fp.lua"
     },
     {
         "path": "sys/modules/opus/crypto/ecc/elliptic.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/elliptic.lua",
-        "hash": "3971597713"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/elliptic.lua"
     },
     {
         "path": "sys/modules/opus/crypto/ecc/fq.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/fq.lua",
-        "hash": "504966692"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/fq.lua"
     },
     {
         "path": "sys/modules/opus/crypto/ecc/init.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/init.lua",
-        "hash": "36204575"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/crypto/ecc/init.lua"
     },
     {
         "path": "sys/modules/opus/http/pastebin.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/http/pastebin.lua",
-        "hash": "1781782440"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/modules/opus/http/pastebin.lua"
     },
     {
         "path": "sys/help/pastebin.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/pastebin.txt",
-        "hash": "580961371"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/pastebin.txt"
     },
     {
         "path": "sys/help/Opus.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Opus.txt",
-        "hash": "1347277343"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Opus.txt"
     },
     {
         "path": "sys/help/Packages.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Packages.txt",
-        "hash": "3608616854"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Packages.txt"
     },
     {
         "path": "sys/help/CloudCatcher.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/CloudCatcher.txt",
-        "hash": "3167134402"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/CloudCatcher.txt"
     },
     {
         "path": "sys/help/Overview.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Overview.txt",
-        "hash": "1904261009"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Overview.txt"
     },
     {
         "path": "sys/help/Networking.txt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Networking.txt",
-        "hash": "3483108511"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/help/Networking.txt"
     },
     {
         "path": "sys/apps/Files.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Files.lua",
-        "hash": "1644371274"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Files.lua"
     },
     {
         "path": "sys/apps/shell.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/shell.lua",
-        "hash": "1117502170"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/shell.lua"
     },
     {
         "path": "sys/apps/autorun.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/autorun.lua",
-        "hash": "257806997"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/autorun.lua"
     },
     {
         "path": "sys/apps/Tasks.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Tasks.lua",
-        "hash": "1973647412"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Tasks.lua"
     },
     {
         "path": "sys/apps/Version.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Version.lua",
-        "hash": "1257776741"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Version.lua"
     },
     {
         "path": "sys/apps/pastebin.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/pastebin.lua",
-        "hash": "2060526234"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/pastebin.lua"
     },
     {
         "path": "sys/apps/mount.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/mount.lua",
-        "hash": "789291995"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/mount.lua"
     },
     {
         "path": "sys/apps/fileui.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/fileui.lua",
-        "hash": "3569509512"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/fileui.lua"
     },
     {
         "path": "sys/apps/Help.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Help.lua",
-        "hash": "1713887133"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Help.lua"
     },
     {
         "path": "sys/apps/netdaemon.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/netdaemon.lua",
-        "hash": "1736237947"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/netdaemon.lua"
     },
     {
         "path": "sys/apps/trust.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/trust.lua",
-        "hash": "1481040497"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/trust.lua"
     },
     {
         "path": "sys/apps/package.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/package.lua",
-        "hash": "366421969"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/package.lua"
     },
     {
         "path": "sys/apps/ShellLauncher.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/ShellLauncher.lua",
-        "hash": "3702115123"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/ShellLauncher.lua"
     },
     {
         "path": "sys/apps/Lua.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Lua.lua",
-        "hash": "3101871442"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Lua.lua"
     },
     {
         "path": "sys/apps/password.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/password.lua",
-        "hash": "467178816"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/password.lua"
     },
     {
         "path": "sys/apps/PackageManager.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/PackageManager.lua",
-        "hash": "7621647"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/PackageManager.lua"
     },
     {
         "path": "sys/apps/Partition.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Partition.lua",
-        "hash": "1785064162"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Partition.lua"
     },
     {
         "path": "sys/apps/Sniff.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Sniff.lua",
-        "hash": "324091344"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Sniff.lua"
     },
     {
         "path": "sys/apps/telnet.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/telnet.lua",
-        "hash": "1462780507"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/telnet.lua"
     },
     {
         "path": "sys/apps/Welcome.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Welcome.lua",
-        "hash": "2258900854"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Welcome.lua"
     },
     {
         "path": "sys/apps/inspect.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/inspect.lua",
-        "hash": "1901159456"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/inspect.lua"
     },
     {
         "path": "sys/apps/Overview.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Overview.lua",
-        "hash": "33494176"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Overview.lua"
     },
     {
         "path": "sys/apps/genotp.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/genotp.lua",
-        "hash": "270391758"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/genotp.lua"
     },
     {
         "path": "sys/apps/Network.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Network.lua",
-        "hash": "171986660"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/Network.lua"
     },
     {
         "path": "sys/apps/System.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/System.lua",
-        "hash": "2360924388"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/System.lua"
     },
     {
         "path": "sys/apps/vnc.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/vnc.lua",
-        "hash": "2257172337"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/vnc.lua"
     },
     {
         "path": "sys/apps/compat.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/compat.lua",
-        "hash": "3496495305"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/compat.lua"
     },
     {
         "path": "sys/apps/network/samba.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/samba.lua",
-        "hash": "3028316830"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/samba.lua"
     },
     {
         "path": "sys/apps/network/proxy.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/proxy.lua",
-        "hash": "1314184829"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/proxy.lua"
     },
     {
         "path": "sys/apps/network/trust.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/trust.lua",
-        "hash": "4118551705"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/trust.lua"
     },
     {
         "path": "sys/apps/network/telnet.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/telnet.lua",
-        "hash": "2063182619"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/telnet.lua"
     },
     {
         "path": "sys/apps/network/snmp.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/snmp.lua",
-        "hash": "2232737183"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/snmp.lua"
     },
     {
         "path": "sys/apps/network/transport.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/transport.lua",
-        "hash": "3626041455"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/transport.lua"
     },
     {
         "path": "sys/apps/network/vnc.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/vnc.lua",
-        "hash": "3987908174"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/vnc.lua"
     },
     {
         "path": "sys/apps/network/keygen.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/keygen.lua",
-        "hash": "2664360392"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/network/keygen.lua"
     },
     {
         "path": "sys/apps/system/diskusage.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/diskusage.lua",
-        "hash": "2568953100"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/diskusage.lua"
     },
     {
         "path": "sys/apps/system/shell.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/shell.lua",
-        "hash": "1146561713"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/shell.lua"
     },
     {
         "path": "sys/apps/system/theme.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/theme.lua",
-        "hash": "2627090859"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/theme.lua"
     },
     {
         "path": "sys/apps/system/kiosk.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/kiosk.lua",
-        "hash": "3347272345"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/kiosk.lua"
     },
     {
         "path": "sys/apps/system/trust.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/trust.lua",
-        "hash": "2358843247"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/trust.lua"
     },
     {
         "path": "sys/apps/system/requires.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/requires.lua",
-        "hash": "3242251897"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/requires.lua"
     },
     {
         "path": "sys/apps/system/label.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/label.lua",
-        "hash": "634519688"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/label.lua"
     },
     {
         "path": "sys/apps/system/password.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/password.lua",
-        "hash": "1206955466"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/password.lua"
     },
     {
         "path": "sys/apps/system/network.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/network.lua",
-        "hash": "2723775950"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/network.lua"
     },
     {
         "path": "sys/apps/system/settings.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/settings.lua",
-        "hash": "3215407690"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/settings.lua"
     },
     {
         "path": "sys/apps/system/cloud.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/cloud.lua",
-        "hash": "997161460"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/cloud.lua"
     },
     {
         "path": "sys/apps/system/path.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/path.lua",
-        "hash": "1741573601"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/path.lua"
     },
     {
         "path": "sys/apps/system/aliases.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/aliases.lua",
-        "hash": "601328712"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/aliases.lua"
     },
     {
         "path": "sys/apps/system/launcher.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/launcher.lua",
-        "hash": "3500601062"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/launcher.lua"
     },
     {
         "path": "usr/.shell_history",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.shell_history",
-        "hash": "329634313"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.shell_history"
     },
     {
         "path": "usr/.registry/6a381ca189cbddd63737cbaf6e8b593844ce467ba52b1c5e5e05d8f29864385d",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/6a381ca189cbddd63737cbaf6e8b593844ce467ba52b1c5e5e05d8f29864385d",
-        "hash": "1077784720"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/6a381ca189cbddd63737cbaf6e8b593844ce467ba52b1c5e5e05d8f29864385d"
     },
     {
         "path": "usr/.registry/377aaf9a802a23873738c0c3916282c8884c11fb",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/377aaf9a802a23873738c0c3916282c8884c11fb",
-        "hash": "3637982091"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/377aaf9a802a23873738c0c3916282c8884c11fb"
     },
     {
         "path": "usr/.registry/9fb1092f32d4fcbf9e061ffd718d4ec689c6c95e",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/9fb1092f32d4fcbf9e061ffd718d4ec689c6c95e",
-        "hash": "209716931"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/9fb1092f32d4fcbf9e061ffd718d4ec689c6c95e"
     },
     {
         "path": "usr/.registry/fb1c39e9f4f3c2628ad173ab401a6e4e4baf783d",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/fb1c39e9f4f3c2628ad173ab401a6e4e4baf783d",
-        "hash": "1072830137"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/fb1c39e9f4f3c2628ad173ab401a6e4e4baf783d"
     },
     {
         "path": "usr/.registry/783ecb3650eabd68f3caadc387abd23018132967",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/783ecb3650eabd68f3caadc387abd23018132967",
-        "hash": "1144615488"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/783ecb3650eabd68f3caadc387abd23018132967"
     },
     {
         "path": "usr/.registry/a0365977708b7387ee9ce2c13e5820e6e11732cb",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/a0365977708b7387ee9ce2c13e5820e6e11732cb",
-        "hash": "4022986922"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/a0365977708b7387ee9ce2c13e5820e6e11732cb"
     },
     {
         "path": "usr/.registry/3f00927a719345edd4a8316599d3b328857987547f8884306861161ffa09647e",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/3f00927a719345edd4a8316599d3b328857987547f8884306861161ffa09647e",
-        "hash": "4102777082"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/3f00927a719345edd4a8316599d3b328857987547f8884306861161ffa09647e"
     },
     {
         "path": "usr/.registry/f6a5201214fb1981e6d46a39303bb676325eb59b-ME2",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/f6a5201214fb1981e6d46a39303bb676325eb59b-ME2",
-        "hash": "1268099456"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/f6a5201214fb1981e6d46a39303bb676325eb59b-ME2"
     },
     {
         "path": "usr/.registry/462e1d985e9adb99f4bbb4455d99329900450224",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/462e1d985e9adb99f4bbb4455d99329900450224",
-        "hash": "4146492372"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/462e1d985e9adb99f4bbb4455d99329900450224"
     },
     {
         "path": "usr/.registry/16323efd4cb1f1f639d67b94161c2ef37a905517e",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/16323efd4cb1f1f639d67b94161c2ef37a905517e",
-        "hash": "1753462780"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/16323efd4cb1f1f639d67b94161c2ef37a905517e"
     },
     {
         "path": "usr/.registry/464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344",
-        "hash": "2081739839"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
     },
     {
         "path": "usr/.registry/c5497bca58468ae64aed6c0fd921109217988db3",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/c5497bca58468ae64aed6c0fd921109217988db3",
-        "hash": "145157038"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/c5497bca58468ae64aed6c0fd921109217988db3"
     },
     {
         "path": "usr/.registry/4dbdd221e957eff27cc47796f3ed8447290f71c7ad8b95e5bd828b31c1858f15",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/4dbdd221e957eff27cc47796f3ed8447290f71c7ad8b95e5bd828b31c1858f15",
-        "hash": "2900381272"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/4dbdd221e957eff27cc47796f3ed8447290f71c7ad8b95e5bd828b31c1858f15"
     },
     {
         "path": "usr/.registry/0a999012ffb87b3edac99adbdfc498b12831a1e2",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/0a999012ffb87b3edac99adbdfc498b12831a1e2",
-        "hash": "1007848718"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/0a999012ffb87b3edac99adbdfc498b12831a1e2"
     },
     {
         "path": "usr/.registry/cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528",
-        "hash": "981221011"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528"
     },
     {
         "path": "usr/.registry/58ec8d6e36e346d9f42eb43935652e3e58e2c829",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/58ec8d6e36e346d9f42eb43935652e3e58e2c829",
-        "hash": "4244994216"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/58ec8d6e36e346d9f42eb43935652e3e58e2c829"
     },
     {
         "path": "usr/.registry/c543ece81605c7d202121c62080a0db4020fc2c75bfac35d101d7f3e93c93949",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/c543ece81605c7d202121c62080a0db4020fc2c75bfac35d101d7f3e93c93949",
-        "hash": "2728780669"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/c543ece81605c7d202121c62080a0db4020fc2c75bfac35d101d7f3e93c93949"
     },
     {
         "path": "usr/.registry/f1e14c30480042e8c71b5482d92ef161815b915e",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/f1e14c30480042e8c71b5482d92ef161815b915e",
-        "hash": "1471492955"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/f1e14c30480042e8c71b5482d92ef161815b915e"
     },
     {
         "path": "usr/.registry/87e89abb4c1c551fe08d355d097f18b8de78edca5f556997085681662fce8eed",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/87e89abb4c1c551fe08d355d097f18b8de78edca5f556997085681662fce8eed",
-        "hash": "1556283762"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/87e89abb4c1c551fe08d355d097f18b8de78edca5f556997085681662fce8eed"
     },
     {
         "path": "usr/.registry/4e404681d4fa9e04ae2bb63d82f58a9733fa605a",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/4e404681d4fa9e04ae2bb63d82f58a9733fa605a",
-        "hash": "38742759"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/4e404681d4fa9e04ae2bb63d82f58a9733fa605a"
     },
     {
         "path": "usr/.registry/1a03bd2fd107c453f3183e30b9716f82200671e8270fbbefbe602f5a48705527",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/1a03bd2fd107c453f3183e30b9716f82200671e8270fbbefbe602f5a48705527",
-        "hash": "1455977255"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/1a03bd2fd107c453f3183e30b9716f82200671e8270fbbefbe602f5a48705527"
     },
     {
         "path": "usr/.registry/01c933b2a36ad8ed2d54089cb2903039046c1216",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/01c933b2a36ad8ed2d54089cb2903039046c1216",
-        "hash": "3037366908"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/.registry/01c933b2a36ad8ed2d54089cb2903039046c1216"
     },
     {
         "path": "usr/config/lzwfs",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/lzwfs",
-        "hash": "1033205973"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/lzwfs"
     },
     {
         "path": "usr/config/version",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/version",
-        "hash": "928781083"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/version"
     },
     {
         "path": "usr/config/Overview",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Overview",
-        "hash": "998547448"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Overview"
     },
     {
         "path": "usr/config/cloud",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/cloud",
-        "hash": "3938"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/cloud"
     },
     {
         "path": "usr/config/nwm",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/nwm",
-        "hash": "1634363393"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/nwm"
     },
     {
         "path": "usr/config/multishell",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/multishell",
-        "hash": "3277417462"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/multishell"
     },
     {
         "path": "usr/config/ui.theme",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/ui.theme",
-        "hash": "1526328576"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/ui.theme"
     },
     {
         "path": "usr/config/package",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/package",
-        "hash": "3720733768"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/package"
     },
     {
         "path": "usr/config/saver",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/saver",
-        "hash": "3825423035"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/saver"
     },
     {
         "path": "usr/config/shellprompt",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/shellprompt",
-        "hash": "3938"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/shellprompt"
     },
     {
         "path": "usr/config/shell",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/shell",
-        "hash": "719472572"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/shell"
     },
     {
         "path": "usr/config/Files",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Files",
-        "hash": "2307614017"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Files"
     },
     {
         "path": "usr/config/secure",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/secure",
-        "hash": "1146867475"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/secure"
     },
     {
         "path": "usr/config/editor",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/editor",
-        "hash": "502700933"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/editor"
     },
     {
         "path": "usr/config/packages",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/packages",
-        "hash": "327172714"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/packages"
     },
     {
         "path": "usr/config/Shoplogs",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Shoplogs",
-        "hash": "1360475562"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Shoplogs"
     },
     {
         "path": "usr/config/os",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/os",
-        "hash": "743507470"
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/os"
     }
 ]

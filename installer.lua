@@ -5,112 +5,188 @@ local BRANCH = "main"
 local BASE_URL = "https://raw.githubusercontent.com/" .. GITHUB_USER .. "/" .. GITHUB_REPO .. "/" .. BRANCH .. "/"
 local MANIFEST_FILE = "content.json"
 
--- Helper function to read a file
-local function readFile(path)
-    if not fs.exists(path) then return nil end
-    local file = fs.open(path, "r")
-    local content = file.readAll()
-    file.close()
-    return content
+-- Blacklist (skip update if exists)
+local BLACKLIST = {
+    ["config.lua"] = true,
+    ["settings.json"] = true
+}
+
+-- UI Colors
+local BG_COLOR = colors.blue
+local TEXT_COLOR = colors.white
+local HEADER_BG = colors.gray
+local HEADER_TEXT = colors.white
+local BAR_BG = colors.black
+local BAR_FILL = colors.yellow
+local ERROR_COLOR = colors.red
+
+local w, h = term.getSize()
+
+local function centerText(y, text, txtColor, bgColor)
+    term.setCursorPos(math.floor((w - #text) / 2) + 1, y)
+    if txtColor then term.setTextColor(txtColor) end
+    if bgColor then term.setBackgroundColor(bgColor) end
+    term.write(text)
 end
 
--- Helper function to save a file
+local function drawUI(status, subStatus, percent)
+    term.setBackgroundColor(BG_COLOR)
+    term.clear()
+
+    term.setCursorPos(1, 1)
+    term.setBackgroundColor(HEADER_BG)
+    term.setTextColor(HEADER_TEXT)
+    term.clearLine()
+    centerText(1, "System Update Installer", HEADER_TEXT, HEADER_BG)
+
+    centerText(math.floor(h/2) - 2, status or "Initializing...", TEXT_COLOR, BG_COLOR)
+    if subStatus then
+        centerText(math.floor(h/2) - 1, subStatus, colors.lightGray, BG_COLOR)
+    end
+
+    if percent then
+        local barWidth = w - 6
+        local filled = math.floor(barWidth * percent)
+
+        term.setCursorPos(4, math.floor(h/2) + 1)
+        term.setBackgroundColor(BAR_BG)
+        term.write(string.rep(" ", barWidth))
+
+        if filled > 0 then
+            term.setCursorPos(4, math.floor(h/2) + 1)
+            term.setBackgroundColor(BAR_FILL)
+            term.write(string.rep(" ", filled))
+        end
+
+        local pctText = math.floor(percent * 100) .. "%"
+        centerText(math.floor(h/2) + 2, pctText, TEXT_COLOR, BG_COLOR)
+    end
+end
+
+-- File helpers
+local function readFile(path)
+    if not fs.exists(path) then return nil end
+    local f = fs.open(path, "r")
+    local c = f.readAll()
+    f.close()
+    return c
+end
+
 local function saveFile(path, content)
     local dir = fs.getDir(path)
     if not fs.exists(dir) and dir ~= "" then
         fs.makeDir(dir)
     end
-    local file = fs.open(path, "w")
-    file.write(content)
-    file.close()
+    local f = fs.open(path, "w")
+    f.write(content)
+    f.close()
 end
 
--- Function to download a file from URL
 local function downloadUrl(url)
-    local response = http.get(url)
-    if response then
-        local content = response.readAll()
-        response.close()
-        return content
+    local r = http.get(url)
+    if r then
+        local c = r.readAll()
+        r.close()
+        return c
     end
     return nil
 end
 
--- Main update logic
-local function update()
-    print("Checking for updates...")
+-- Simple hash (must match manifest!)
+local function simpleHash(str)
+    local hash = 0
+    for i = 1, #str do
+        hash = (hash * 31 + string.byte(str, i)) % 2^32
+    end
+    return tostring(hash)
+end
 
-    -- 1. Download the new manifest
+local function getFileHash(path)
+    local content = readFile(path)
+    if not content then return nil end
+    return simpleHash(content)
+end
+
+local function update()
+    drawUI("Fetching manifest...", "Connecting to GitHub...", 0)
+
     local manifestUrl = BASE_URL .. MANIFEST_FILE
-    print("Fetching manifest from: " .. manifestUrl)
     local newManifestJson = downloadUrl(manifestUrl)
 
     if not newManifestJson then
-        print("Error: Could not download content.json")
+        drawUI("Error: Connection Failed", nil, 0)
+        sleep(3)
         return
     end
 
     local newManifest = textutils.unserializeJSON(newManifestJson)
     if not newManifest then
-        print("Error: Failed to parse new manifest JSON")
+        drawUI("Error: Invalid Manifest", nil, 0)
+        sleep(3)
         return
     end
 
-    -- 2. Load the old manifest (if exists)
-    local oldManifest = {}
-    local oldManifestJson = readFile(MANIFEST_FILE)
-    if oldManifestJson then
-        oldManifest = textutils.unserializeJSON(oldManifestJson) or {}
-    end
+    drawUI("Analyzing files...", "Hashing local files...", 0)
 
-    -- Create a lookup table for old file hashes for faster access
-    local oldFileHashes = {}
-    for _, item in ipairs(oldManifest) do
-        if item.path and item.sha256 then
-            oldFileHashes[item.path] = item.sha256
-        end
-    end
-
-    -- 3. Compare and download
-    local updatesCount = 0
-    local totalFiles = #newManifest
-
-    print("Found " .. totalFiles .. " files in remote manifest.")
+    local filesToUpdate = {}
 
     for _, item in ipairs(newManifest) do
         local path = item.path
-        local url = item.url
         local newHash = item.sha256
-        local oldHash = oldFileHashes[path]
 
-        -- Check if file needs update
-        if newHash ~= oldHash or not fs.exists(path) then
-            print("Updating: " .. path)
-            local fileContent = downloadUrl(url)
+        local exists = fs.exists(path)
+        local localHash = getFileHash(path)
 
-            if fileContent then
-                saveFile(path, fileContent)
-                updatesCount = updatesCount + 1
-            else
-                print("Failed to download: " .. path)
-            end
+        -- BLACKLIST LOGIC
+        if BLACKLIST[path] and exists then
+            -- skip
         else
-            -- File is up to date
-            -- print("Skipping: " .. path .. " (Up to date)")
+            if (not exists) or (localHash ~= newHash) then
+                table.insert(filesToUpdate, item)
+            end
         end
     end
 
-    -- 4. Save the new manifest locally
-    saveFile(MANIFEST_FILE, newManifestJson)
+    local totalUpdates = #filesToUpdate
 
-    if updatesCount > 0 then
-        print("Update complete! Updated " .. updatesCount .. " files.")
-        print("Rebooting in 3 seconds...")
-        sleep(3)
-        os.reboot()
-    else
-        print("System is already up to date.")
+    if totalUpdates == 0 then
+        saveFile(MANIFEST_FILE, newManifestJson)
+        drawUI("System is up to date", "No changes detected", 1)
+        sleep(2)
+        return
     end
+
+    for i, item in ipairs(filesToUpdate) do
+        local progress = (i - 1) / totalUpdates
+        drawUI("Updating system...", item.path, progress)
+
+        local content = downloadUrl(item.url)
+        if content then
+            saveFile(item.path, content)
+        else
+            drawUI("Download failed", item.path, progress)
+            sleep(1)
+        end
+    end
+
+    saveFile(MANIFEST_FILE, newManifestJson)
+    drawUI("Update Complete!", "Updated " .. totalUpdates .. " files", 1)
+    sleep(3)
+    os.reboot()
 end
 
-update()
+-- Main
+term.setBackgroundColor(BG_COLOR)
+term.clear()
+
+if not http then
+    centerText(h/2, "HTTP API disabled!", ERROR_COLOR, BG_COLOR)
+    return
+end
+
+local ok, err = pcall(update)
+if not ok then
+    term.setBackgroundColor(colors.black)
+    term.clear()
+    printError("Fatal Error: " .. tostring(err))
+end

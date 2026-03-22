@@ -8,26 +8,26 @@
       prompt = "CraftOS 1.9",
     },
     {
-      prompt = "Opus",
+      prompt = "GGHJK OS",
       args = {
         "/sys/boot/opus.lua",
       },
     },
     {
-      prompt = "Opus Shell",
+      prompt = "GGHJK OS Shell",
       args = {
         "/sys/boot/opus.lua",
         "/sys/apps/shell.lua",
       },
     },
     {
-      prompt = "Opus Kiosk",
+      prompt = "GGHJK OS Kiosk",
       args = {
         "/sys/boot/kiosk.lua",
       },
     },
     {
-      prompt = "Opus TLCO",
+      prompt = "GGHJK OS TLCO",
       args = {
         "/sys/boot/tlco.lua",
       },

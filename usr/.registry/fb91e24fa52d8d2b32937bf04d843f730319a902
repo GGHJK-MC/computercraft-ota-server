@@ -1,0 +1,12 @@
+{
+  title = "Update",
+  category = "System",
+  key = "fb91e24fa52d8d2b32937bf04d843f730319a902",
+  iconExt = "  �3���� �\
+ 3���3 ���\
+  �3�3 �� 3� �",
+  icon = "17180    \
+181     \
+17080717f>",
+  run = "/sys/apps/update-ota.lua",
+}

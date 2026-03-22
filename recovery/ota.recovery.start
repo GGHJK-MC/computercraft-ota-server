@@ -1,0 +1,12 @@
+local httpget = http.get("https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/installer.lua")
+local content = httpget.readAll()
+
+print("Formating /boot.img")
+fs.delete("/boot.img")
+print("Formating /version")
+fs.delete("/version/ver.txt")
+print("Patching boot image unconditionaly")
+local bootimgd = fs.open("/boot.img", "w")
+bootimgd.write(content)
+print("Rebooting into patched recovery")
+os.reboot()

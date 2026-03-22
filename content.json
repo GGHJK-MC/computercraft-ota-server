@@ -16,7 +16,7 @@
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.settings"
     },
     {
-        "path": "version/ver.txt",
+        "path": "version/VER.TXT",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/version/VER.TXT"
     },
     {
@@ -26,6 +26,10 @@
     {
         "path": ".enchat/settings",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.enchat/settings"
+    },
+    {
+        "path": "recovery/ota.recovery.start",
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/recovery/ota.recovery.start"
     },
     {
         "path": "packages/monitor/mirror.lua",

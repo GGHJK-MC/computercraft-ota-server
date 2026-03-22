@@ -1956,10 +1956,6 @@
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/settings.lua"
     },
     {
-        "path": "sys/apps/system/cloud.lua",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/cloud.lua"
-    },
-    {
         "path": "sys/apps/system/path.lua",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/sys/apps/system/path.lua"
     },
@@ -2074,10 +2070,6 @@
     {
         "path": "usr/config/Overview",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/Overview"
-    },
-    {
-        "path": "usr/config/cloud",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/usr/config/cloud"
     },
     {
         "path": "usr/config/nwm",

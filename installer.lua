@@ -1,72 +1,91 @@
--- Configuration
 local GITHUB_USER = "MC-GGHJK"
 local GITHUB_REPO = "computercraft-ota-server"
 local BRANCH = "main"
-local BASE_URL = "https://raw.githubusercontent.com/" .. GITHUB_USER .. "/" .. GITHUB_REPO .. "/" .. BRANCH .. "/"
+local BASE_URL = "https://raw.githubusercontent.com/"..GITHUB_USER.."/"..GITHUB_REPO.."/"..BRANCH.."/"
 local MANIFEST_FILE = "content.json"
 
--- Blacklist (skip update if exists)
 local BLACKLIST = {
     ["config.lua"] = true,
     ["settings.json"] = true
 }
 
--- UI Colors
-local BG_COLOR = colors.blue
-local TEXT_COLOR = colors.white
-local HEADER_BG = colors.gray
-local HEADER_TEXT = colors.white
-local BAR_BG = colors.black
-local BAR_FILL = colors.yellow
-local ERROR_COLOR = colors.red
+-- Vylepšená paleta barev (Moderní Dark Theme)
+local THEME = {
+    bg = colors.black,
+    text = colors.white,
+    headerBg = colors.cyan,
+    headerText = colors.black,
+    barBg = colors.gray,
+    barFill = colors.lightBlue,
+    subText = colors.lightGray,
+    errorText = colors.red,
+    successText = colors.lime
+}
 
-local w, h = term.getSize()
+local w,h = term.getSize()
 
 local function centerText(y, text, txtColor, bgColor)
-    term.setCursorPos(math.floor((w - #text) / 2) + 1, y)
+    term.setCursorPos(math.floor((w-#text)/2)+1, y)
     if txtColor then term.setTextColor(txtColor) end
     if bgColor then term.setBackgroundColor(bgColor) end
     term.write(text)
 end
 
-local function drawUI(status, subStatus, percent)
-    term.setBackgroundColor(BG_COLOR)
+local function drawUI(status, subStatus, percent, isError, isSuccess)
+    term.setBackgroundColor(THEME.bg)
     term.clear()
 
-    term.setCursorPos(1, 1)
-    term.setBackgroundColor(HEADER_BG)
-    term.setTextColor(HEADER_TEXT)
+    -- Hlavička
+    term.setCursorPos(1,1)
+    term.setBackgroundColor(THEME.headerBg)
+    term.setTextColor(THEME.headerText)
     term.clearLine()
-    centerText(1, "System Update Installer", HEADER_TEXT, HEADER_BG)
+    centerText(1, " OTA System Update ", THEME.headerText, THEME.headerBg)
 
-    centerText(math.floor(h/2) - 2, status or "Initializing...", TEXT_COLOR, BG_COLOR)
+    -- Hlavní status text
+    local statusColor = THEME.text
+    if isError then statusColor = THEME.errorText end
+    if isSuccess then statusColor = THEME.successText end
+    
+    centerText(math.floor(h/2)-3, status or "Initializing...", statusColor, THEME.bg)
+
+    -- Detailní text pod statusem
     if subStatus then
-        centerText(math.floor(h/2) - 1, subStatus, colors.lightGray, BG_COLOR)
+        centerText(math.floor(h/2)-2, subStatus, THEME.subText, THEME.bg)
     end
 
+    -- Progress bar
     if percent then
-        local barWidth = w - 6
+        local barWidth = w - 8 -- Větší okraje pro lepší vzhled
         local filled = math.floor(barWidth * percent)
 
-        term.setCursorPos(4, math.floor(h/2) + 1)
-        term.setBackgroundColor(BAR_BG)
+        -- Pozadí baru
+        term.setCursorPos(5, math.floor(h/2))
+        term.setBackgroundColor(THEME.barBg)
         term.write(string.rep(" ", barWidth))
 
+        -- Výplň baru
         if filled > 0 then
-            term.setCursorPos(4, math.floor(h/2) + 1)
-            term.setBackgroundColor(BAR_FILL)
+            term.setCursorPos(5, math.floor(h/2))
+            term.setBackgroundColor(THEME.barFill)
             term.write(string.rep(" ", filled))
         end
 
-        local pctText = math.floor(percent * 100) .. "%"
-        centerText(math.floor(h/2) + 2, pctText, TEXT_COLOR, BG_COLOR)
+        -- Procenta
+        local pctText = math.floor(percent*100).." %"
+        centerText(math.floor(h/2)+2, pctText, THEME.barFill, THEME.bg)
     end
+
+    -- Patička
+    term.setCursorPos(2, h)
+    term.setBackgroundColor(THEME.bg)
+    term.setTextColor(colors.gray)
+    term.write("System: " .. GITHUB_REPO)
 end
 
--- File helpers
 local function readFile(path)
     if not fs.exists(path) then return nil end
-    local f = fs.open(path, "r")
+    local f = fs.open(path,"r")
     local c = f.readAll()
     f.close()
     return c
@@ -74,10 +93,10 @@ end
 
 local function saveFile(path, content)
     local dir = fs.getDir(path)
-    if not fs.exists(dir) and dir ~= "" then
+    if dir ~= "" and not fs.exists(dir) then
         fs.makeDir(dir)
     end
-    local f = fs.open(path, "w")
+    local f = fs.open(path,"w")
     f.write(content)
     f.close()
 end
@@ -92,101 +111,85 @@ local function downloadUrl(url)
     return nil
 end
 
--- Simple hash (must match manifest!)
-local function simpleHash(str)
-    local hash = 0
-    for i = 1, #str do
-        hash = (hash * 31 + string.byte(str, i)) % 2^32
-    end
-    return tostring(hash)
-end
-
-local function getFileHash(path)
-    local content = readFile(path)
-    if not content then return nil end
-    return simpleHash(content)
-end
-
 local function update()
     drawUI("Fetching manifest...", "Connecting to GitHub...", 0)
 
     local manifestUrl = BASE_URL .. MANIFEST_FILE
-    local newManifestJson = downloadUrl(manifestUrl)
+    local manifestJson = downloadUrl(manifestUrl)
 
-    if not newManifestJson then
-        drawUI("Error: Connection Failed", nil, 0)
+    if not manifestJson then
+        drawUI("Connection failed", "Check your internet or URL", 0, true)
         sleep(3)
         return
     end
 
-    local newManifest = textutils.unserializeJSON(newManifestJson)
-    if not newManifest then
-        drawUI("Error: Invalid Manifest", nil, 0)
+    local manifest = textutils.unserializeJSON(manifestJson)
+
+    if not manifest then
+        drawUI("Invalid manifest", "Failed to parse JSON", 0, true)
         sleep(3)
         return
     end
-
-    drawUI("Analyzing files...", "Hashing local files...", 0)
 
     local filesToUpdate = {}
+    drawUI("Preparing update...", "Checking files...", 0)
 
-    for _, item in ipairs(newManifest) do
+    for _, item in ipairs(manifest) do
         local path = item.path
-        local newHash = item.sha256
-
-        local exists = fs.exists(path)
-        local localHash = getFileHash(path)
-
-        -- BLACKLIST LOGIC
-        if BLACKLIST[path] and exists then
-            -- skip
-        else
-            if (not exists) or (localHash ~= newHash) then
-                table.insert(filesToUpdate, item)
-            end
+        if not BLACKLIST[path] then
+            table.insert(filesToUpdate, item)
         end
     end
 
-    local totalUpdates = #filesToUpdate
+    local total = #filesToUpdate
 
-    if totalUpdates == 0 then
-        saveFile(MANIFEST_FILE, newManifestJson)
-        drawUI("System is up to date", "No changes detected", 1)
+    if total == 0 then
+        saveFile(MANIFEST_FILE, manifestJson)
+        drawUI("Nothing to update", "System is up to date", 1, false, true)
         sleep(2)
         return
     end
 
     for i, item in ipairs(filesToUpdate) do
-        local progress = (i - 1) / totalUpdates
-        drawUI("Updating system...", item.path, progress)
+        local progress = (i-1)/total
+        drawUI("Downloading files...", "/" .. item.path, progress)
 
         local content = downloadUrl(item.url)
+
         if content then
             saveFile(item.path, content)
         else
-            drawUI("Download failed", item.path, progress)
-            sleep(1)
+            drawUI("Download failed", "/" .. item.path, progress, true)
+            sleep(1.5)
         end
     end
 
-    saveFile(MANIFEST_FILE, newManifestJson)
-    drawUI("Update Complete!", "Updated " .. totalUpdates .. " files", 1)
+    saveFile(MANIFEST_FILE, manifestJson)
+    drawUI("Update Complete!", total.." files updated successfully.", 1, false, true)
     sleep(3)
+    
+    term.setBackgroundColor(colors.black)
+    term.clear()
+    term.setCursorPos(1,1)
     os.reboot()
 end
 
--- Main
-term.setBackgroundColor(BG_COLOR)
+-- Hlavní spouštěcí logika
+term.setBackgroundColor(THEME.bg)
 term.clear()
 
 if not http then
-    centerText(h/2, "HTTP API disabled!", ERROR_COLOR, BG_COLOR)
+    drawUI("HTTP API disabled!", "Enable HTTP in ComputerCraft config", nil, true)
+    sleep(4)
     return
 end
 
 local ok, err = pcall(update)
+
 if not ok then
+    drawUI("Fatal Error Occurred", tostring(err), nil, true)
+    sleep(5)
     term.setBackgroundColor(colors.black)
     term.clear()
-    printError("Fatal Error: " .. tostring(err))
+    term.setCursorPos(1,1)
 end

@@ -8,5 +8,5 @@
   icon = "17180    \
 181     \
 17080717f>",
-  run = "/sys/apps/update-ota.lua",
+  run = "/recovery/ota.recovery.start",
 }

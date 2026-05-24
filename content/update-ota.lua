@@ -6,12 +6,12 @@ local MANIFEST_FILE = "content.json"
 
 local BLACKLIST = {
     ["/sys/etc/fstab"] = true,
-    ["/sys/etc/apps.db"] = true,  -- byla tu chybějící čárka!
+    ["/sys/etc/apps.db"] = true,
     [".settings"] = true
 }
 
 -- ============================================================
---  SHA-256
+--  SHA-256 (Optimalizováno o yieldy pro dlouhé soubory)
 -- ============================================================
 local function sha256(msg)
     local band, bxor, bor, bnot = bit32.band, bit32.bxor, bit32.bor, bit32.bnot
@@ -40,7 +40,15 @@ local function sha256(msg)
     while #msg % 64 ~= 56 do msg = msg .. "\x00" end
     local bitLen = msgLen * 8
     for s = 56, 0, -8 do msg = msg .. string.char(band(rshift(bitLen, s), 0xFF)) end
+
+    local blockCount = 0
     for blk = 1, #msg, 64 do
+        blockCount = blockCount + 1
+        -- Každých 15 bloků (necelý 1 KB) uvolníme CPU, aby ComputerCraft nepadal
+        if blockCount % 15 == 0 then
+            sleep(0)
+        end
+
         local W = {}
         for j = 1, 16 do
             local o = blk + (j-1)*4
@@ -111,7 +119,12 @@ local function drawUI(status, subStatus, percent, isError, isSuccess)
     centerText(math.floor(h/2) - 3, status or "Initializing...", statusColor, THEME.bg)
 
     if subStatus then
-        centerText(math.floor(h/2) - 2, subStatus, THEME.subText, THEME.bg)
+        -- Pokud je cesta k souboru moc dlouhá, ořízneme ji, aby se nerozbíjelo UI
+        local displaySub = subStatus
+        if #displaySub > w - 4 then
+            displaySub = "..." .. string.sub(displaySub, #displaySub - (w - 8))
+        end
+        centerText(math.floor(h/2) - 2, displaySub, THEME.subText, THEME.bg)
     end
 
     if percent then
@@ -189,18 +202,26 @@ local function update()
         return
     end
 
-    -- Vyfiltruje blacklist a soubory, které se nezměnily (SHA-256)
     drawUI("Checking files...", "Comparing hashes...", 0)
+    sleep(0.1)
 
     local filesToUpdate = {}
-    for _, item in ipairs(manifest) do
+    for idx, item in ipairs(manifest) do
         local path = item.path
+
+        -- Průběžně aktualizujeme UI, ať uživatel vidí, co se kontroluje
+        drawUI("Checking files...", path, idx / #manifest)
+
         if not BLACKLIST[path] then
             local existing = readFile(path)
-            -- pokud soubor neexistuje NEBO hash nesedí → stáhnout
             if not existing or sha256(existing) ~= item.sha256 then
                 table.insert(filesToUpdate, item)
             end
+        end
+
+        -- OCHRANA: Každé 3 soubory vydechneme, aby se resetoval watch-dog časovač
+        if idx % 3 == 0 then
+            sleep(0)
         end
     end
 
@@ -219,7 +240,6 @@ local function update()
 
         local content = downloadUrl(item.url)
         if content then
-            -- ověření hashe staženého souboru
             if sha256(content) == item.sha256 then
                 saveFile(item.path, content)
                 downloaded = downloaded + 1
@@ -231,6 +251,9 @@ local function update()
             drawUI("Download failed", item.path, (i - 1) / total, true)
             sleep(1.5)
         end
+
+        -- Pauza mezi stahováním (síťové operace sice yieldují samy, ale jistota je jistota)
+        sleep(0)
     end
 
     saveFile(MANIFEST_FILE, manifestJson)

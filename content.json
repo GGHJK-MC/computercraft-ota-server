@@ -26,7 +26,7 @@
     },
     {
         "path": "content/update-ota.lua",
-        "sha256": "965d2ab62f3c9da54ce8e07f6e56f5cd392d3922ac90962f9b89ae5c473b2d96",
+        "sha256": "2d3c3ec69a527ffeacbfb03b8777b9116118387121ec675a483115c4d502cd27",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/content/update-ota.lua"
     },
     {

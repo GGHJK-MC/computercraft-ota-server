@@ -235,7 +235,7 @@ local function update()
 
     -- Vyfiltruje blacklist a soubory, které se nezměnily (SHA-256)
     drawUI("Checking files...", "Comparing hashes...", 0)
-    sleep(0.1)
+    sleep(0.5)
 
     local filesToUpdate = {}
     for _, item in ipairs(manifest) do

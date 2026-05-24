@@ -4,8 +4,8 @@
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/blittle"
     },
     {
-        "path": "boot.img",
-        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/boot.img"
+        "path": "init_boot",
+        "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/init_boot"
     },
     {
         "path": ".startup.boot",

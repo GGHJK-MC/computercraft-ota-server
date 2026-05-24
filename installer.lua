@@ -173,6 +173,50 @@ end
 --  Hlavní update logika
 -- ============================================================
 local function update()
+    local VERSION_FILE = "version/ver.txt"
+
+    drawUI("Checking version...", "Connecting to GitHub...", 0)
+
+    -- 1. Načtení verze z GitHubu a z lokálního disku
+    local githubVerRaw = downloadUrl(BASE_URL .. VERSION_FILE)
+    local localVerRaw = readFile(VERSION_FILE)
+
+    local githubVer = tonumber(githubVerRaw)
+    local localVer = tonumber(localVerRaw)
+
+    -- Kontrola, zda se podařilo načíst vzdálenou verzi
+    if not githubVer then
+        drawUI("Invalid remote version", "Cannot read version from GitHub", 0, true)
+        sleep(3)
+        return
+    end
+
+    -- Pokud lokální soubor neexistuje, nastavíme 0, aby proběhl první update
+    if not localVer then localVer = 0 end
+
+    -- ============================================================
+    --  KONTROLA VERZÍ (Tvůj požadavek)
+    -- ============================================================
+    if localVer == githubVer then
+        -- Verze jsou stejné = systém je aktuální
+        drawUI("System is up to date", "Version: " .. localVer, 1, false, true)
+        sleep(3)
+        return
+
+    elseif localVer > githubVer then
+        -- Local je větší a GitHub menší = NonSupported version
+        drawUI("NonSupported version", "Local: " .. localVer .. " | Git: " .. githubVer, 0, true)
+        sleep(5)
+        return
+
+    elseif localVer < githubVer then
+        -- GitHub větší a local menší = Spustí se update
+        drawUI("New update found!", "Upgrading " .. localVer .. " -> " .. githubVer, 0)
+        sleep(1.5)
+    end
+    -- ============================================================
+
+    -- Stahování manifestu (spustí se pouze pokud localVer < githubVer)
     drawUI("Fetching manifest...", "Connecting to GitHub...", 0)
 
     local manifestJson = downloadUrl(BASE_URL .. MANIFEST_FILE)
@@ -191,13 +235,13 @@ local function update()
 
     -- Vyfiltruje blacklist a soubory, které se nezměnily (SHA-256)
     drawUI("Checking files...", "Comparing hashes...", 0)
+    sleep(0.1)
 
     local filesToUpdate = {}
     for _, item in ipairs(manifest) do
         local path = item.path
         if not BLACKLIST[path] then
             local existing = readFile(path)
-            -- pokud soubor neexistuje NEBO hash nesedí → stáhnout
             if not existing or sha256(existing) ~= item.sha256 then
                 table.insert(filesToUpdate, item)
             end
@@ -206,8 +250,10 @@ local function update()
 
     local total = #filesToUpdate
 
+    -- Pokud manifest hlásí změny, ale hashe souborů sedí, pouze uložíme manifest a novou verzi
     if total == 0 then
         saveFile(MANIFEST_FILE, manifestJson)
+        saveFile(VERSION_FILE, githubVerRaw)
         drawUI("Nothing to update", "System is up to date", 1, false, true)
         sleep(2)
         return
@@ -219,7 +265,6 @@ local function update()
 
         local content = downloadUrl(item.url)
         if content then
-            -- ověření hashe staženého souboru
             if sha256(content) == item.sha256 then
                 saveFile(item.path, content)
                 downloaded = downloaded + 1
@@ -233,7 +278,10 @@ local function update()
         end
     end
 
+    -- Po úspěšném stažení zapíšeme manifest a uložíme novou verzi na disk počítače
     saveFile(MANIFEST_FILE, manifestJson)
+    saveFile(VERSION_FILE, githubVerRaw)
+
     drawUI("Update Complete!", downloaded .. " files updated.", 1, false, true)
     sleep(3)
 

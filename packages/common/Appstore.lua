@@ -1,365 +1,103 @@
-local Ansi   = require('opus.ansi')
-local SHA    = require('opus.crypto.sha2')
-local UI     = require('opus.ui')
-local Util   = require('opus.util')
+local LIST_URL = "https://raw.githubusercontent.com/GGHJK-MC/CC-App-store/main/Github/list.json"
 
-local fs         = _G.fs
-local http       = _G.http
-local multishell = _ENV.multishell
-local os         = _G.os
-local shell      = _ENV.shell
-local colors     = _G.colors
-
-local REGISTRY_DIR = 'usr/.registry'
-
---                                           FIX SOMEDAY
-local function registerApp(app, key)
-	app.key = SHA.compute(key)
-	Util.writeTable(fs.combine(REGISTRY_DIR, app.key), app)
-	os.queueEvent('os_register_app')
+local function fetchJSON(url)
+    local response = http.get(url)
+    if not response then return nil end
+    local content = response.readAll()
+    response.close()
+    return textutils.unserialiseJSON(content)
 end
 
-local function unregisterApp(key)
-	local filename = fs.combine(REGISTRY_DIR, SHA.compute(key))
-	if fs.exists(filename) then
-		fs.delete(filename)
-		os.queueEvent('os_register_app')
-	end
+local function downloadFile(url, path)
+    local response = http.get(url)
+    if not response then return false end
+    -- Ensure directory exists
+    local dir = fs.getDir(path)
+    if not fs.exists(dir) then
+        fs.makeDir(dir)
+    end
+
+    local file = fs.open(path, "w")
+    file.write(response.readAll())
+    file.close()
+    response.close()
+    return true
 end
 
-multishell.setTitle(multishell.getCurrent(), 'App Store')
-UI:configure('Appstore', ...)
-
-local APP_DIR = 'usr/apps'
-
-local source = {
-	text = "STD Default",
-	event = 'source',
-	url = "https://github.com/LDDestroier/STD-GUI/raw/master/list.lua",
-}
-
-shell.setDir(APP_DIR)
-
-local function downloadApp(app)
-	local h
-
-	if type(app.url) == "table" then
-		h = contextualGet(app.url[1])
-	else
-		h = http.get(app.url)
-	end
-
-	if h then
-		local contents = h.readAll()
-		h:close()
-		return contents
-	end
+local function drawHeader()
+    term.clear()
+    term.setCursorPos(1,1)
+    term.setBackgroundColor(colors.gray)
+    term.setTextColor(colors.white)
+    term.clearLine()
+    print(" CC App Store - Click to Install")
+    term.setBackgroundColor(colors.black)
 end
 
-local function runApp(app, checkExists, ...)
-	local env = shell.makeEnv(_ENV)
-	local path, fn
-	local args = { ... }
+local function showAppList(packages)
+    drawHeader()
+    for i, pkg in ipairs(packages) do
+        term.setCursorPos(2, i + 2)
+        term.setTextColor(colors.yellow)
+        term.write(pkg.name)
+        term.setCursorPos(20, i + 2)
+        term.setTextColor(colors.lightGray)
+        term.write("[" .. pkg.category .. "]")
+    end
 
-	if checkExists and fs.exists(fs.combine(APP_DIR, app.name)) then
-		path = fs.combine(APP_DIR, app.name)
-	else
-		local program = downloadApp(app)
-
-		fn = function()
-
-			if not program then
-				error('Failed to download')
-			end
-
-			fn = _G.loadstring(program, app.name)
-
-			if not fn then
-				error('Failed to download')
-			end
-
-			_G.setfenv(fn, env)
-			fn(table.unpack(args))
-		end
-	end
-
-	multishell.openTab(_ENV, {
-		title = app.name,
-		path = path,
-		fn = fn,
-		focused = true,
-	})
-
-	return true, 'Running program'
+    term.setCursorPos(2, 18)
+    term.setTextColor(colors.red)
+    print("Press 'q' to exit")
 end
 
-local installApp = function(app)
+local function installApp(pkg)
+    term.setCursorPos(1, 15)
+    term.clearLine()
+    term.setTextColor(colors.cyan)
+    print("Installing " .. pkg.name .. "...")
 
-	local program = downloadApp(app)
-	if not program then
-		return false, "Failed to download"
-	end
+    local meta = fetchJSON(pkg.metadata)
+    if not meta then
+        term.setTextColor(colors.red)
+        print("Error: Could not load metadata.")
+        sleep(2)
+        return
+    end
 
-	local fullPath = fs.combine(APP_DIR, app.name)
-	Util.writeFile(fullPath, program)
-	return true, 'Installed as ' .. fullPath
+    if downloadFile(meta.download, meta.run) then
+        term.setTextColor(colors.green)
+        print("Installed successfully!")
+    else
+        term.setTextColor(colors.red)
+        print("Download failed.")
+    end
+    sleep(2)
 end
 
-local viewApp = function(app)
-
-	local program = downloadApp(app)
-	if not program then
-		return false, "Failed to download"
-	end
-
-	Util.writeFile('/.source', program)
-	shell.openForegroundTab('edit /.source')
-	fs.delete('/.source')
-	return true
+-- Main Execution
+if not http then
+    print("Error: HTTP API is not enabled.")
+    return
 end
 
-local getSourceListing = function()
-	local contents = http.get(source.url)
-	if contents then
-
-		local fn = _G.loadstring(contents.readAll(), source.text)
-		contents.close()
-
-		local env = { std = { } }
-		setmetatable(env, { __index = _G })
-		_G.setfenv(fn, env)
-		fn()
-
-		if env.contextualGet then
-			contextualGet = env.contextualGet
-		end
-
-		source.storeURLs = env.std.storeURLs
-		source.storeCatagoryNames = env.std.storeCatagoryNames
-
-		if source.storeURLs and source.storeCatagoryNames then
-			for k,v in pairs(source.storeURLs) do
-				if source.generateName then
-					v.name = v.title:match('(%w+)')
-					if not v.name or #v.name == 0 then
-						v.name = tostring(k)
-					else
-						v.name = v.name:lower()
-					end
-				else
-					v.name = k
-				end
-				v.categoryName = source.storeCatagoryNames[v.catagory]
-				v.ltitle = v.title:lower()
-			end
-		end
-	end
+local data = fetchJSON(LIST_URL)
+if not data then
+    print("Error: Could not load store data.")
+    return
 end
 
-getSourceListing()
+while true do
+    showAppList(data.packages)
+    local event, button, x, y = os.pullEvent()
 
-if not source.storeURLs then
-	error('Unable to download application list')
+    if event == "mouse_click" then
+        local index = y - 2
+        if data.packages[index] then
+            installApp(data.packages[index])
+        end
+    elseif event == "char" and button == "q" then
+        term.clear()
+        term.setCursorPos(1,1)
+        break
+    end
 end
-
-local buttons = { }
-for k,v in Util.spairs(source.storeCatagoryNames,
-			function(a, b) return a:lower() < b:lower() end) do
-
-	if v ~= 'Operating System' then
-		table.insert(buttons, {
-			text = v,
-			event = 'category',
-			index = k,
-		})
-	end
-end
-source.index, source.name = Util.first(source.storeCatagoryNames)
-
-local appPage = UI.Page {
-	menuBar = UI.MenuBar {
-		buttons = {
-			{ text = '\027',    event = 'back'    },
-			{ text = 'Install', event = 'install' },
-			{ text = 'Run',     event = 'run'     },
-			{ text = 'View',    event = 'view'    },
-			{ text = 'Remove',  event = 'uninstall', name = 'removeButton' },
-		},
-	},
-	container = UI.Window {
-		x = 2, y = 3, ex = -2, ey = -3,
-		viewport = UI.Viewport(),
-	},
-	notification = UI.Notification(),
-	accelerators = {
-		[ 'control-q' ] = 'back',
-		backspace = 'back',
-	},
-}
-
-function appPage.container.viewport:draw()
-	local app = self.parent.parent.app
-	local str = string.format(
-		'%s \nBy: %s \nCategory: %s\nFile name: %s\n\n%s',
-		Ansi.yellow .. app.title .. Ansi.reset,
-		app.creator,
-		app.categoryName, app.name,
-		Ansi.yellow .. app.description .. Ansi.reset)
-
-	self:clear()
-	self:print(str)
-
-	if appPage.notification.enabled then
-		appPage.notification:draw()
-	end
-end
-
-function appPage:enable(app)
-	self.source = source
-	self.app = app
-	UI.Page.enable(self)
-
-	self.container.viewport:setScrollPosition(0)
-	if fs.exists(fs.combine(APP_DIR, app.name)) then
-		self.menuBar.removeButton:enable('Remove')
-	else
-		self.menuBar.removeButton:disable('Remove')
-	end
-end
-
-function appPage:eventHandler(event)
-	if event.type == 'back' then
-		UI:setPreviousPage()
-
-	elseif event.type == 'run' then
-		self.notification:info('Running program', 3)
-		self:sync()
-		runApp(self.app, true)
-
-	elseif event.type == 'view' then
-		self.notification:info('Downloading program', 3)
-		self:sync()
-		viewApp(self.app)
-
-	elseif event.type == 'uninstall' then
-		if self.app.runOnly then
-			runApp(self.app, false, 'uninstall')
-		else
-			fs.delete(fs.combine(APP_DIR, self.app.name))
-			self.notification:success("Uninstalled " .. self.app.name, 3)
-			self:focusFirst(self)
-			self.menuBar.removeButton:disable('Remove')
-			self.menuBar:draw()
-
-			unregisterApp(self.app.creator .. '.' .. self.app.name)
-		end
-
-	elseif event.type == 'install' then
-		self.notification:info("Installing", 3)
-		self:sync()
-		local s, m
-		if self.app.runOnly then
-			s,m = runApp(self.app, false)
-		else
-			s,m = installApp(self.app)
-		end
-		if s then
-			self.notification:success(m, 3)
-
-			if not self.app.runOnly then
-				self.menuBar.removeButton:enable('Remove')
-				self.menuBar:draw()
-
-				local category = 'Apps'
-				if self.app.catagoryName == 'Game' then
-					category = 'Games'
-				end
-
-				registerApp({
-					run = fs.combine(APP_DIR, self.app.name),
-					title = self.app.title,
-					category = category,
-					icon = self.app.icon,
-				}, self.app.creator .. '.' .. self.app.name)
-			end
-		else
-			self.notification:error(m, 3)
-		end
-	else
-		return UI.Page.eventHandler(self, event)
-	end
-	return true
-end
-
-local categoryPage = UI.Page {
-	menuBar = UI.MenuBar {
-		buttons = {
-			{ text = 'Category', name = 'categoryButton', dropdown = buttons },
-		},
-	},
-	grid = UI.ScrollingGrid {
-		y = 2, ey = -2,
-		columns = {
-			{ heading = 'Title', key = 'title' },
-		},
-		sortColumn = 'title',
-	},
-	statusBar = UI.StatusBar(),
-	accelerators = {
-		l = 'lua',
-		[ 'control-q' ] = 'quit',
-	},
-	source = source,
-}
-
-function categoryPage:setCategory(name, index)
-	self.grid.values = { }
-	for _,v in pairs(source.storeURLs) do
-		if index == 0 or index == v.catagory then
-			table.insert(self.grid.values, v)
-		end
-	end
-	self.statusBar:setStatus(string.format('%s: %s', self.source.text or '', name))
-	self.grid:update()
-	self.grid:setIndex(1)
-end
-
-function categoryPage.grid:sortCompare(a, b)
-	return a.ltitle < b.ltitle
-end
-
-function categoryPage.grid:getRowTextColor(row, selected)
-	if fs.exists(fs.combine(APP_DIR, row.name)) then
-		return colors.orange
-	end
-	return UI.Grid:getRowTextColor(row, selected)
-end
-
-function categoryPage:eventHandler(event)
-	if event.type == 'grid_select' or event.type == 'select' then
-		UI:setPage(appPage, self.grid:getSelected())
-
-	elseif event.type == 'category' then
-		self:setCategory(event.button.text, event.button.index)
-		self:setFocus(self.grid)
-		self:draw()
-
-	elseif event.type == 'source' then
-		self:setFocus(self.grid)
-		self:setSource(event.button)
-		self:draw()
-
-	elseif event.type == 'quit' then
-		UI:quit()
-
-	else
-		return UI.Page.eventHandler(self, event)
-	end
-	return true
-end
-
-print("Retrieving catalog list")
-categoryPage:setCategory(source.name, source.index)
-
-UI:setPage(categoryPage)
-UI:start()

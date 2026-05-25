@@ -1361,7 +1361,7 @@
     },
     {
         "path": "packages/common/Appstore.lua",
-        "sha256": "b5f4a11bb5ec9c66c1e92a428023443793bb81751e616407f441489108fa5841",
+        "sha256": "978db270035fe096800dc9560ce97bdc5aaa2a77b7ed652386a99848bbd24b0a",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/packages/common/Appstore.lua"
     },
     {

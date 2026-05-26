@@ -1,4 +1,4 @@
-local httpget = http.get("https://pastebin.com/raw/RyixbgfH/")
+local httpget = http.get("https://pastebin.com/raw/RyixbgfH")
 local content = httpget.readAll()
 
 print("Formating /init_boot")

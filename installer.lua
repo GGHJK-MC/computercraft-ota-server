@@ -1,26 +1,24 @@
 local GITHUB_USER = "GGHJK-MC"
 local GITHUB_REPO = "computercraft-ota-server"
-local BRANCH = "main"
-local BASE_URL = "https://raw.githubusercontent.com/"..GITHUB_USER.."/"..GITHUB_REPO.."/"..BRANCH.."/"
+local BRANCH      = "main"
+local BASE_URL     = "https://raw.githubusercontent.com/"..GITHUB_USER.."/"..GITHUB_REPO.."/"..BRANCH.."/"
 local MANIFEST_FILE = "content.json"
 
 local BLACKLIST = {
-    ["/sys/etc/fstab"] = true,
+    ["/sys/etc/fstab"]  = true,
     ["/sys/etc/apps.db"] = true,
-    [".settings"] = true
+    [".settings"]        = true,
 }
 
 -- ============================================================
---  SHA-256 (Optimalizováno o yieldy pro dlouhé soubory)
+--  SHA-256 (optimalizovaná verze)
 -- ============================================================
 local function sha256(msg)
-    local band, bxor, bor, bnot = bit32.band, bit32.bxor, bit32.bor, bit32.bnot
+    local band, bxor, bor, bnot   = bit32.band, bit32.bxor, bit32.bor, bit32.bnot
     local rshift, lshift, rrotate = bit32.rshift, bit32.lshift, bit32.rrotate
-    local function badd(...)
-        local s = 0
-        for _, v in ipairs({...}) do s = band(s + v, 0xFFFFFFFF) end
-        return s
-    end
+    local sbyte, srep, schar, sfmt = string.byte, string.rep, string.char, string.format
+    local MASK = 0xFFFFFFFF
+
     local K = {
         0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
         0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
@@ -35,124 +33,183 @@ local function sha256(msg)
         0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,
         0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19,
     }
+
     local msgLen = #msg
-    msg = msg .. "\x80"
-    while #msg % 64 ~= 56 do msg = msg .. "\x00" end
     local bitLen = msgLen * 8
-    for s = 56, 0, -8 do msg = msg .. string.char(band(rshift(bitLen, s), 0xFF)) end
+    msg = msg
+        .. "\x80"
+        .. srep("\x00", (55 - msgLen % 64) % 64)
+        .. schar(0, 0, 0, 0,
+                 band(rshift(bitLen, 24), 0xFF),
+                 band(rshift(bitLen, 16), 0xFF),
+                 band(rshift(bitLen,  8), 0xFF),
+                 band(bitLen, 0xFF))
 
     local blockCount = 0
     for blk = 1, #msg, 64 do
         blockCount = blockCount + 1
-        -- Každých 15 bloků (necelý 1 KB) uvolníme CPU, aby ComputerCraft nepadal
-        if blockCount % 15 == 0 then
-            sleep(0)
-        end
+        if blockCount % 15 == 0 then sleep(0) end
 
         local W = {}
         for j = 1, 16 do
-            local o = blk + (j-1)*4
-            W[j] = bor(bor(bor(lshift(msg:byte(o),24),lshift(msg:byte(o+1),16)),lshift(msg:byte(o+2),8)),msg:byte(o+3))
+            local o = blk + (j - 1) * 4
+            local b1, b2, b3, b4 = sbyte(msg, o, o + 3)
+            W[j] = bor(bor(bor(lshift(b1, 24), lshift(b2, 16)), lshift(b3, 8)), b4)
         end
         for j = 17, 64 do
-            local s0 = bxor(bxor(rrotate(W[j-15],7),rrotate(W[j-15],18)),rshift(W[j-15],3))
-            local s1 = bxor(bxor(rrotate(W[j-2],17),rrotate(W[j-2],19)),rshift(W[j-2],10))
-            W[j] = badd(W[j-16], s0, W[j-7], s1)
+            local w15 = W[j - 15]; local w2 = W[j - 2]
+            local s0  = bxor(bxor(rrotate(w15, 7), rrotate(w15, 18)), rshift(w15, 3))
+            local s1  = bxor(bxor(rrotate(w2, 17), rrotate(w2,  19)), rshift(w2,  10))
+            W[j] = band(W[j - 16] + s0 + W[j - 7] + s1, MASK)
         end
+
         local a,b,c,d,e,f,g,hh = H[1],H[2],H[3],H[4],H[5],H[6],H[7],H[8]
         for j = 1, 64 do
-            local S1    = bxor(bxor(rrotate(e,6),rrotate(e,11)),rrotate(e,25))
-            local ch    = bxor(band(e,f),band(bnot(e),g))
-            local temp1 = badd(hh,S1,ch,K[j],W[j])
-            local S0    = bxor(bxor(rrotate(a,2),rrotate(a,13)),rrotate(a,22))
-            local maj   = bxor(bxor(band(a,b),band(a,c)),band(b,c))
-            local temp2 = badd(S0,maj)
-            hh=g; g=f; f=e; e=badd(d,temp1)
-            d=c; c=b; b=a; a=badd(temp1,temp2)
+            local S1    = bxor(bxor(rrotate(e,6), rrotate(e,11)), rrotate(e,25))
+            local ch    = bxor(band(e,f), band(bnot(e),g))
+            local temp1 = band(hh + S1 + ch + K[j] + W[j], MASK)
+            local S0    = bxor(bxor(rrotate(a,2), rrotate(a,13)), rrotate(a,22))
+            local maj   = bxor(bxor(band(a,b), band(a,c)), band(b,c))
+            local temp2 = band(S0 + maj, MASK)
+            hh=g; g=f; f=e; e=band(d+temp1,MASK)
+            d=c;  c=b; b=a; a=band(temp1+temp2,MASK)
         end
-        H[1]=badd(H[1],a); H[2]=badd(H[2],b); H[3]=badd(H[3],c); H[4]=badd(H[4],d)
-        H[5]=badd(H[5],e); H[6]=badd(H[6],f); H[7]=badd(H[7],g); H[8]=badd(H[8],hh)
+        H[1]=band(H[1]+a,MASK); H[2]=band(H[2]+b,MASK)
+        H[3]=band(H[3]+c,MASK); H[4]=band(H[4]+d,MASK)
+        H[5]=band(H[5]+e,MASK); H[6]=band(H[6]+f,MASK)
+        H[7]=band(H[7]+g,MASK); H[8]=band(H[8]+hh,MASK)
     end
-    local result = ""
-    for _, v in ipairs(H) do result = result .. string.format("%08x", v) end
-    return result
+
+    local out = {}
+    for i, v in ipairs(H) do out[i] = sfmt("%08x", v) end
+    return table.concat(out)
 end
 
 -- ============================================================
---  Téma a UI
+--  UI – OpusOS styl
 -- ============================================================
-local THEME = {
-    bg = colors.black,
-    text = colors.white,
-    headerBg = colors.cyan,
-    headerText = colors.black,
-    barBg = colors.gray,
-    barFill = colors.lightBlue,
-    subText = colors.lightGray,
-    errorText = colors.red,
-    successText = colors.lime
-}
-
 local w, h = term.getSize()
 
-local function centerText(y, text, txtColor, bgColor)
-    term.setCursorPos(math.floor((w - #text) / 2) + 1, y)
-    if txtColor then term.setTextColor(txtColor) end
-    if bgColor then term.setBackgroundColor(bgColor) end
+-- Pixel logo "OTA" – blit řádky: text / fg / bg
+-- Barvy: c=cyan(3), 7=lightGray, 0=black, 8=gray, b=lightBlue, f=white
+local LOGO = {
+    --  text            fg              bg
+    { " OTA ",  "33333", "00000" },
+    { "     ",  "00000", "00000" },
+}
+
+local function cls()
+    term.setBackgroundColor(colors.black)
+    term.clear()
+end
+
+local function writeAt(x, y, text, fg, bg)
+    term.setCursorPos(x, y)
+    if bg  then term.setBackgroundColor(bg)  end
+    if fg  then term.setTextColor(fg)        end
     term.write(text)
 end
 
-local function drawUI(status, subStatus, percent, isError, isSuccess)
-    term.setBackgroundColor(THEME.bg)
-    term.clear()
+local function centerWrite(y, text, fg, bg)
+    local x = math.floor((w - #text) / 2) + 1
+    writeAt(x, y, text, fg, bg)
+end
 
-    term.setCursorPos(1, 1)
-    term.setBackgroundColor(THEME.headerBg)
-    term.setTextColor(THEME.headerText)
-    term.clearLine()
-    centerText(1, " OTA System Update ", THEME.headerText, THEME.headerBg)
+-- Kreslí pixel logo uprostřed obrazovky od řádku startY
+local function drawLogo(startY)
+    -- Malý ASCII blit banner
+    local banner = {
+        "  ___  _____ ___ ",
+        " / _ \\|_   _/ _ \\",
+        "| | | | | || | | |",
+        "| |_| | | || |_| |",
+        " \\___/  |_| \\___/ ",
+    }
+    local bannerW = #banner[1]
+    local bx = math.floor((w - bannerW) / 2) + 1
+    for i, line in ipairs(banner) do
+        writeAt(bx, startY + i - 1, line, colors.cyan, colors.black)
+    end
+end
 
-    local statusColor = THEME.text
-    if isError   then statusColor = THEME.errorText   end
-    if isSuccess then statusColor = THEME.successText end
+-- Tenká oddělovací čára
+local function drawDivider(y, col)
+    writeAt(1, y, string.rep("\140", w), col or colors.gray, colors.black)
+end
 
-    centerText(math.floor(h/2) - 3, status or "Initializing...", statusColor, THEME.bg)
+-- Progress bar v Opus stylu (bez rámečku, jen bloky)
+local function drawBar(y, percent)
+    local barW  = w - 4
+    local filled = math.floor(barW * percent)
+    local empty  = barW - filled
 
+    term.setCursorPos(3, y)
+    term.setBackgroundColor(colors.black)
+
+    -- Filled část – světle modrá
+    if filled > 0 then
+        term.setBackgroundColor(colors.lightBlue)
+        term.setTextColor(colors.blue)
+        term.write(string.rep("\127", filled))
+    end
+    -- Prázdná část – tmavě šedá
+    if empty > 0 then
+        term.setBackgroundColor(colors.gray)
+        term.setTextColor(colors.gray)
+        term.write(string.rep("\127", empty))
+    end
+
+    term.setBackgroundColor(colors.black)
+end
+
+-- Hlavní funkce kreslení
+local STATE_NORMAL  = 0
+local STATE_ERROR   = 1
+local STATE_SUCCESS = 2
+
+local function drawUI(status, subStatus, percent, state)
+    cls()
+
+    -- Logo (řádky 1–5)
+    drawLogo(1)
+
+    -- Oddělovač pod logem
+    drawDivider(7)
+
+    -- Status zpráva
+    local statusColor = colors.white
+    if state == STATE_ERROR   then statusColor = colors.red  end
+    if state == STATE_SUCCESS then statusColor = colors.lime end
+
+    centerWrite(9, status or "Initializing...", statusColor, colors.black)
+
+    -- Sub-status (zkrácení pokud je moc dlouhé)
     if subStatus then
-        -- Pokud je cesta k souboru moc dlouhá, ořízneme ji, aby se nerozbíjelo UI
-        local displaySub = subStatus
-        if #displaySub > w - 4 then
-            displaySub = "..." .. string.sub(displaySub, #displaySub - (w - 8))
+        local sub = subStatus
+        if #sub > w - 2 then
+            sub = "\26 " .. sub:sub(#sub - (w - 5))
         end
-        centerText(math.floor(h/2) - 2, displaySub, THEME.subText, THEME.bg)
+        centerWrite(10, sub, colors.gray, colors.black)
     end
 
+    -- Progress bar
     if percent then
-        local barWidth = w - 8
-        local filled   = math.floor(barWidth * percent)
-
-        term.setCursorPos(5, math.floor(h/2))
-        term.setBackgroundColor(THEME.barBg)
-        term.write(string.rep(" ", barWidth))
-
-        if filled > 0 then
-            term.setCursorPos(5, math.floor(h/2))
-            term.setBackgroundColor(THEME.barFill)
-            term.write(string.rep(" ", filled))
-        end
-
-        local pctText = math.floor(percent * 100) .. " %"
-        centerText(math.floor(h/2) + 2, pctText, THEME.barFill, THEME.bg)
+        drawBar(12, percent)
+        local pct = string.format("%3d%%", math.floor(percent * 100))
+        centerWrite(13, pct, colors.lightBlue, colors.black)
     end
 
-    term.setCursorPos(2, h)
-    term.setBackgroundColor(THEME.bg)
-    term.setTextColor(colors.gray)
-    term.write("System: " .. GITHUB_REPO)
+    -- Oddělovač nad footerem
+    drawDivider(h - 1)
+
+    -- Footer – repo a verze
+    writeAt(2, h, GITHUB_REPO, colors.gray, colors.black)
+    local ver = "github/" .. GITHUB_USER
+    writeAt(w - #ver, h, ver, colors.gray, colors.black)
 end
 
 -- ============================================================
---  Pomocné funkce
+--  Pomocné I/O funkce
 -- ============================================================
 local function readFile(path)
     if not fs.exists(path) then return nil end
@@ -164,9 +221,7 @@ end
 
 local function saveFile(path, content)
     local dir = fs.getDir(path)
-    if dir ~= "" and not fs.exists(dir) then
-        fs.makeDir(dir)
-    end
+    if dir ~= "" and not fs.exists(dir) then fs.makeDir(dir) end
     local f = fs.open(path, "w")
     f.write(content)
     f.close()
@@ -183,60 +238,95 @@ local function downloadUrl(url)
 end
 
 -- ============================================================
+--  Splash obrazovka (Opus styl – čeká na timer nebo klávesu)
+-- ============================================================
+local function splash()
+    cls()
+    drawLogo(math.floor(h / 2) - 3)
+
+    local hint = "System Update Starting..."
+    centerWrite(math.floor(h / 2) + 3, hint, colors.gray, colors.black)
+
+    drawDivider(h - 1)
+    writeAt(2, h, GITHUB_REPO, colors.gray, colors.black)
+
+    -- Animovaný spinner po dobu 1.5 s (jako Opus delay)
+    local frames = { "|", "/", "-", "\\" }
+    local timer  = os.startTimer(1.5)
+    local frame  = 1
+    local tick   = os.startTimer(0.15)
+
+    while true do
+        local e, id = os.pullEvent()
+        if e == "timer" and id == timer then
+            break
+        elseif e == "timer" and id == tick then
+            centerWrite(math.floor(h / 2) + 5, frames[frame], colors.cyan, colors.black)
+            frame = (frame % #frames) + 1
+            tick  = os.startTimer(0.15)
+        elseif e == "key" or e == "char" then
+            break
+        end
+    end
+end
+
+-- ============================================================
 --  Hlavní update logika
 -- ============================================================
 local function update()
-    drawUI("Fetching manifest...", "Connecting to GitHub...", 0)
+    drawUI("Connecting to GitHub...", BASE_URL .. MANIFEST_FILE, 0)
 
     local manifestJson = downloadUrl(BASE_URL .. MANIFEST_FILE)
     if not manifestJson then
-        drawUI("Connection failed", "Check your internet or URL", 0, true)
-        sleep(3)
+        drawUI("Connection failed", "Cannot reach GitHub – check HTTP config", nil, STATE_ERROR)
+        sleep(4)
         return
     end
 
     local manifest = textutils.unserializeJSON(manifestJson)
     if not manifest then
-        drawUI("Invalid manifest", "Failed to parse JSON", 0, true)
-        sleep(3)
+        drawUI("Invalid manifest", "JSON parse error in " .. MANIFEST_FILE, nil, STATE_ERROR)
+        sleep(4)
         return
     end
 
-    drawUI("Checking files...", "Comparing hashes...", 0)
-    sleep(0.1)
+    -- Fáze 1: porovnání hashů
+    drawUI("Verifying files...", "Comparing SHA-256 checksums...", 0)
+    sleep(0.05)
 
     local filesToUpdate = {}
+    local total = #manifest
     for idx, item in ipairs(manifest) do
-        local path = item.path
+        drawUI("Verifying files...", item.path, idx / total)
 
-        -- Průběžně aktualizujeme UI, ať uživatel vidí, co se kontroluje
-        drawUI("Checking files...", path, idx / #manifest)
-
-        if not BLACKLIST[path] then
-            local existing = readFile(path)
+        if not BLACKLIST[item.path] then
+            local existing = readFile(item.path)
             if not existing or sha256(existing) ~= item.sha256 then
                 table.insert(filesToUpdate, item)
             end
         end
 
-        -- OCHRANA: Každé 3 soubory vydechneme, aby se resetoval watch-dog časovač
-        if idx % 3 == 0 then
-            sleep(0)
-        end
+        if idx % 3 == 0 then sleep(0) end
     end
 
-    local total = #filesToUpdate
+    local updateCount = #filesToUpdate
 
-    if total == 0 then
+    if updateCount == 0 then
         saveFile(MANIFEST_FILE, manifestJson)
-        drawUI("Nothing to update", "System is up to date", 1, false, true)
-        sleep(2)
+        drawUI("Up to date", "No files need updating", 1, STATE_SUCCESS)
+        sleep(2.5)
         return
     end
 
+    -- Fáze 2: stahování
     local downloaded = 0
     for i, item in ipairs(filesToUpdate) do
-        drawUI("Downloading files...", item.path, (i - 1) / total)
+        local prog = (i - 1) / updateCount
+        drawUI(
+            string.format("Downloading  %d / %d", i, updateCount),
+            item.path,
+            prog
+        )
 
         local content = downloadUrl(item.url)
         if content then
@@ -244,49 +334,59 @@ local function update()
                 saveFile(item.path, content)
                 downloaded = downloaded + 1
             else
-                drawUI("Hash mismatch!", item.path, (i - 1) / total, true)
+                drawUI("Hash mismatch", item.path, prog, STATE_ERROR)
                 sleep(1.5)
             end
         else
-            drawUI("Download failed", item.path, (i - 1) / total, true)
+            drawUI("Download failed", item.path, prog, STATE_ERROR)
             sleep(1.5)
         end
 
-        -- Pauza mezi stahováním (síťové operace sice yieldují samy, ale jistota je jistota)
         sleep(0)
     end
 
     saveFile(MANIFEST_FILE, manifestJson)
-    drawUI("Update Complete!", downloaded .. " files updated.", 1, false, true)
-    sleep(3)
+    drawUI(
+        string.format("Done  –  %d file%s updated", downloaded, downloaded == 1 and "" or "s"),
+        "Patching boot image...",
+        1,
+        STATE_SUCCESS
+    )
+    sleep(1.5)
 
-    term.setBackgroundColor(colors.black)
-    term.clear()
+    -- --------------------------------------------------------
+    --  Původní init_boot logika (zachována beze změny)
+    -- --------------------------------------------------------
+    cls()
     term.setCursorPos(1, 1)
-    local httpget = http.get("https://raw.githubusercontent.com/GGHJK-MC/computercraft-ota-server/refs/heads/main/init_boot")
+    local httpget = http.get(
+        "https://raw.githubusercontent.com/GGHJK-MC/computercraft-ota-server/refs/heads/main/init_boot"
+    )
     local content = httpget.readAll()
+    httpget.close()
     local bootimgd = fs.open("/init_boot", "w")
     bootimgd.write(content)
+    bootimgd.close()
     os.reboot()
 end
 
 -- ============================================================
---  Spuštění
+--  Boot
 -- ============================================================
-term.setBackgroundColor(THEME.bg)
-term.clear()
+cls()
 
 if not http then
-    drawUI("HTTP API disabled!", "Enable HTTP in ComputerCraft config", nil, true)
-    sleep(4)
+    drawUI("HTTP Disabled", "Enable http in computercraft-server.toml", nil, STATE_ERROR)
+    sleep(5)
     return
 end
 
+splash()
+
 local ok, err = pcall(update)
 if not ok then
-    drawUI("Fatal Error Occurred", tostring(err), nil, true)
-    sleep(5)
-    term.setBackgroundColor(colors.black)
-    term.clear()
+    drawUI("Fatal Error", tostring(err), nil, STATE_ERROR)
+    sleep(6)
+    cls()
     term.setCursorPos(1, 1)
 end

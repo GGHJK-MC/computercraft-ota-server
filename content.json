@@ -11,7 +11,7 @@
     },
     {
         "path": ".startup.boot",
-        "sha256": "6d4489dfe4f279e1835816d5da52cb3612903d3634f84aa19a6c00cd9725d1d8",
+        "sha256": "79ef6298397f8e9242d1034e7b644bd2e5a153ab49cc4f5f6b783dc4d18ab4d8",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/.startup.boot"
     },
     {

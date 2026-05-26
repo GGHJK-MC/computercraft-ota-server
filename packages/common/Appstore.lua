@@ -1,125 +1,210 @@
-local LIST_URL = "https://raw.githubusercontent.com/GGHJK-MC/CC-App-store/main/Github/list.json"
+local Ansi     = require('opus.ansi')
+local Config   = require('opus.config')
+local Packages = require('opus.packages')
+local UI       = require('opus.ui')
+local Util     = require('opus.util')
 
-local function fetchJSON(url)
-    local response = http.get(url)
-    if not response then return nil end
-    local content = response.readAll()
-    response.close()
-    local ok, data = pcall(textutils.unserialiseJSON, content)
-    return ok and data or nil
+local colors   = _G.colors
+local term     = _G.term
+
+UI:configure('PackageManager', ...)
+
+local config = Config.load('package')
+
+local page = UI.Page {
+	grid = UI.ScrollingGrid {
+		x = 2, ex = 14, y = 2, ey = -6,
+		values = { },
+		columns = {
+			{ heading = 'Package', key = 'name' },
+		},
+		sortColumn = 'name',
+		autospace = true,
+		help = 'Select a package',
+	},
+	add = UI.Button {
+		x = 2, y = -3,
+		text = ' + ',
+		event = 'action',
+		help = 'Install or update',
+	},
+	remove = UI.Button {
+		x = 8, y = -3,
+		text = ' - ',
+		event = 'action',
+		operation = 'uninstall',
+		operationText = 'Remove',
+		help = 'Remove',
+	},
+	updateall = UI.Button {
+		ex = -2, y = -3, width = 12,
+		text = 'Update All',
+		event = 'updateall',
+		help = 'Update all installed packages',
+	},
+	description = UI.TextArea {
+		x = 16, y = 3, ey = -5,
+		marginRight = 2, marginLeft = 0,
+	},
+	UI.Checkbox {
+		x = 3, y = -5,
+		label = 'Compress',
+		textColor = 'yellow',
+		backgroundColor = 'primary',
+		value = config.compression,
+		help = 'Compress packages (experimental)',
+	},
+	action = UI.SlideOut {
+		titleBar = UI.TitleBar {
+			event = 'hide-action',
+		},
+		button = UI.Button {
+			x = -10, y = 3,
+			text = ' Begin ', event = 'begin',
+		},
+		output = UI.Embedded {
+			y = 5, ey = -2, x = 2, ex = -2,
+			visible = true,
+		},
+	},
+	statusBar = UI.StatusBar { },
+	accelerators = {
+		[ 'control-q' ] = 'quit',
+	},
+}
+
+function page:loadPackages()
+	self.grid.values = { }
+	self.statusBar:setStatus('Downloading...')
+	self:sync()
+
+	for k in pairs(Packages:list()) do
+		local manifest = Packages:getManifest(k)
+		if not manifest then
+			manifest = {
+				invalid = true,
+				description = 'Unable to download manifest',
+				title = '',
+			}
+		end
+		table.insert(self.grid.values, {
+			installed = not not Packages:isInstalled(k),
+			name = k,
+			manifest = manifest,
+		})
+	end
+	self.grid:update()
+	self.grid:setIndex(1)
+	self.grid:emit({
+		type = 'grid_focus_row',
+		selected = self.grid:getSelected(),
+		element = self.grid,
+	})
+	self.statusBar:setStatus('Updated packages')
 end
 
-local function downloadFile(url, path)
-    local response = http.get(url)
-    if not response then return false end
-
-    local dir = fs.getDir(path)
-    if dir ~= "." and not fs.exists(dir) then
-        fs.makeDir(dir)
-    end
-
-    local file = fs.open(path, "w")
-    file.write(response.readAll())
-    file.close()
-    response.close()
-    return true
+function page.grid:getRowTextColor(row, selected)
+	if row.installed then
+		return colors.yellow
+	end
+	return UI.Grid.getRowTextColor(self, row, selected)
 end
 
-local function drawHeader()
-    term.setBackgroundColor(colors.gray)
-    term.setTextColor(colors.white)
-    term.setCursorPos(1,1)
-    term.clearLine()
-    term.write(" CC App Store - Click to Install")
-    term.setBackgroundColor(colors.black)
+function page.action:show()
+	self.output.win:clear()
+	UI.SlideOut.show(self)
 end
 
-local function showAppList(packages)
-    term.clear()
-    drawHeader()
-    if not packages or #packages == 0 then
-        term.setCursorPos(2, 3)
-        term.setTextColor(colors.red)
-        term.write("No apps found.")
-        return
-    end
+function page:run(operation, name)
+	local oterm = term.redirect(self.action.output.win)
+	self.action.output:clear()
+	local cmd = string.format('package %s %s', operation, name)
+	term.setCursorPos(1, 1)
+	term.clear()
+	term.setTextColor(colors.yellow)
+	print(cmd .. '\n')
+	term.setTextColor(colors.white)
+	local s, m = Util.run(_ENV, '/sys/apps/package.lua', operation, name)
 
-    for i, pkg in ipairs(packages) do
-        term.setCursorPos(2, i + 2)
-        term.setTextColor(colors.yellow)
-        term.write(pkg.name or "Unknown")
-
-        local category = pkg.category or "N/A"
-        term.setCursorPos(20, i + 2)
-        term.setTextColor(colors.lightGray)
-        term.write("[" .. category .. "]")
-    end
-
-    term.setCursorPos(2, 18)
-    term.setTextColor(colors.red)
-    term.write("Press 'q' to exit")
+	if not s and m then
+		_G.printError(m)
+	end
+	term.redirect(oterm)
+	self.action.output:draw()
 end
 
-local function installApp(pkg)
-    if not pkg or not pkg.metadata then return end
-
-    term.setCursorPos(1, 15)
-    term.clearLine()
-    term.setTextColor(colors.cyan)
-    term.write("Installing " .. (pkg.name or "app") .. "...")
-
-    local meta = fetchJSON(pkg.metadata)
-    if not meta or not meta.download or not meta.run then
-        term.setCursorPos(1, 16)
-        term.setTextColor(colors.red)
-        term.write("Error: Invalid metadata.")
-        sleep(2)
-        return
-    end
-
-    if downloadFile(meta.download, meta.run) then
-        term.setCursorPos(1, 16)
-        term.setTextColor(colors.green)
-        term.write("Installed successfully!")
-    else
-        term.setCursorPos(1, 16)
-        term.setTextColor(colors.red)
-        term.write("Download failed.")
-    end
-    sleep(2)
+function page:updateSelection(selected)
+	self.add.operation = selected.installed and 'update' or 'install'
+	self.add.operationText = selected.installed and 'Update' or 'Install'
+	self.remove.inactive = not selected.installed
+	self.add:draw()
+	self.remove:draw()
 end
 
--- Main Execution
-if not http then
-    print("Error: HTTP API is not enabled.")
-    return
+function page:eventHandler(event)
+	if event.type == 'focus_change' then
+		self.statusBar:setStatus(event.focused.help)
+
+	elseif event.type == 'grid_focus_row' then
+		local manifest = event.selected.manifest
+
+		self.description:setValue(string.format('%s%s\n\n%s%s',
+			Ansi.yellow, manifest.title,
+			Ansi.white, manifest.description))
+		self.description:draw()
+		self:updateSelection(event.selected)
+
+	elseif event.type == 'checkbox_change' then
+		config.compression = not config.compression
+		Config.update('package', config)
+
+	elseif event.type == 'updateall' then
+		self.operation = 'updateall'
+		self.action.button.text = ' Begin '
+		self.action.button.event = 'begin'
+		self.action.titleBar.title = 'Update All'
+		self.action:show()
+
+	elseif event.type == 'action' then
+		local selected = self.grid:getSelected()
+		if selected then
+			self.operation = event.button.operation
+			self.action.button.text = event.button.operationText
+			self.action.titleBar.title = selected.manifest.title
+			self.action.button.text = ' Begin '
+			self.action.button.event = 'begin'
+			self.action:show()
+		end
+
+	elseif event.type == 'hide-action' then
+		self.action:hide()
+
+	elseif event.type == 'begin' then
+		if self.operation == 'updateall' then
+			self:run(self.operation, '')
+		else
+			local selected = self.grid:getSelected()
+			self:run(self.operation, selected.name)
+			selected.installed = Packages:isInstalled(selected.name)
+
+			self:updateSelection(selected)
+		end
+
+		self.action.button.text = ' Done  '
+		self.action.button.event = 'hide-action'
+		self.action.button:draw()
+
+	elseif event.type == 'quit' then
+		UI:quit()
+	end
+	UI.Page.eventHandler(self, event)
 end
 
-term.clear()
-term.setCursorPos(1,1)
-print("Loading data...")
+UI:setPage(page)
+page.statusBar:setStatus('Downloading...')
+page:sync()
+Packages:downloadList()
+page:loadPackages()
+page:sync()
 
-local data = fetchJSON(LIST_URL)
-if not data or not data.packages then
-    print("Error: Could not load store data.")
-    print("URL: " .. LIST_URL)
-    return
-end
-
-while true do
-    showAppList(data.packages)
-    local event, button, x, y = os.pullEvent()
-
-    if event == "mouse_click" and button == 1 then
-        local index = y - 2
-        if data.packages[index] then
-            installApp(data.packages[index])
-        end
-    elseif event == "char" and button == "q" then
-        term.setBackgroundColor(colors.black)
-        term.setTextColor(colors.white)
-        term.clear()
-        term.setCursorPos(1,1)
-        break
-    end
-end
+UI:start()

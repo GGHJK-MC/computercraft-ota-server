@@ -78,21 +78,58 @@ function page:loadPackages()
 	self.statusBar:setStatus('Downloading...')
 	self:sync()
 
-	for k in pairs(Packages:list()) do
-		local manifest = Packages:getManifest(k)
-		if not manifest then
-			manifest = {
-				invalid = true,
-				description = 'Unable to download manifest',
-				title = '',
-			}
+	if self.remotePackages then
+		-- Use packages from remote list
+		for _, pkg in ipairs(self.remotePackages) do
+			local k = pkg.id or pkg.name
+			local manifest = nil
+
+			-- Try to download manifest from the metadata URL if present
+			if pkg.metadata and _G.http and textutils then
+				local ok, res = pcall(function()
+					local h = http.get(pkg.metadata)
+					if not h then return nil end
+					local body = h.readAll()
+					h.close()
+					return body and textutils.unserializeJSON(body)
+				end)
+				if ok then manifest = res end
+			end
+
+			-- Fallback to Packages:getManifest or a default manifest
+			if not manifest then
+				manifest = Packages.getManifest and Packages:getManifest(k) or {
+					invalid = true,
+					description = 'Unable to download manifest',
+					title = pkg.name or '',
+				}
+			end
+
+			table.insert(self.grid.values, {
+				installed = not not (Packages.isInstalled and Packages:isInstalled(k)),
+				name = k,
+				manifest = manifest,
+			})
 		end
-		table.insert(self.grid.values, {
-			installed = not not Packages:isInstalled(k),
-			name = k,
-			manifest = manifest,
-		})
+	else
+		-- Fallback to Packages API
+		for k in pairs(Packages:list()) do
+			local manifest = Packages:getManifest(k)
+			if not manifest then
+				manifest = {
+					invalid = true,
+					description = 'Unable to download manifest',
+					title = '',
+				}
+			end
+			table.insert(self.grid.values, {
+				installed = not not Packages:isInstalled(k),
+				name = k,
+				manifest = manifest,
+			})
+		end
 	end
+
 	self.grid:update()
 	self.grid:setIndex(1)
 	self.grid:emit({
@@ -200,10 +237,45 @@ function page:eventHandler(event)
 	UI.Page.eventHandler(self, event)
 end
 
+-- Attempt to fetch the master list from raw.githubusercontent. If successful,
+-- store the parsed packages in page.remotePackages and use those for display.
+local function fetchRemoteList()
+	if not _G.http or not textutils then
+		return false, 'no http/textutils available'
+	end
+	local url = 'https://raw.githubusercontent.com/GGHJK-MC/CC-App-store/refs/heads/master/list.json'
+	local ok, err = pcall(function()
+		local h = http.get(url)
+		if not h then error('http.get failed') end
+		local body = h.readAll()
+		h.close()
+		if not body then error('empty body') end
+		local parsed = textutils.unserializeJSON(body)
+		if not parsed or not parsed.packages then error('invalid json') end
+		return parsed.packages
+	end)
+	if not ok then
+		return false, err
+	end
+	return true, err
+end
+
 UI:setPage(page)
 page.statusBar:setStatus('Downloading...')
 page:sync()
-Packages:downloadList()
+
+local ok, res = fetchRemoteList()
+if ok then
+	page.remotePackages = res
+else
+	-- If we couldn't fetch the remote list, try the legacy script first,
+	-- then fall back to the Packages API.
+	local ok2 = Util.run(_ENV, '/sys/apps/package.lua', 'downloadList')
+	if not ok2 then
+		Packages:downloadList()
+	end
+end
+
 page:loadPackages()
 page:sync()
 

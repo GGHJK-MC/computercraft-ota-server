@@ -2,7 +2,7 @@
   preload = {
     "/packages/lzwfs/startup.lua",
   },
-  delay = 1.5,
+  delay = 0.5,
   menu = {
     {
       prompt = "CraftOS 1.9",

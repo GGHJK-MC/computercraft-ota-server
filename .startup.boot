@@ -32,5 +32,11 @@
         "/sys/boot/tlco.lua",
       },
     },
+    {
+      prompt = "GGHJK OS Update",
+      args = {
+        "/recovery/ota.recovery.start",
+      },
+    },
   },
 }

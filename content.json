@@ -36,7 +36,7 @@
     },
     {
         "path": "recovery/ota.recovery.start",
-        "sha256": "174065bb1dfcba7b71cbd059e481679e1d106541bd39709f867a6fdaca46d783",
+        "sha256": "44adf47dcee77757aa3e6b701bb24bdb6f19e70f30da0fa19d793d83d0da6cbe",
         "url": "https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/refs/heads/main/recovery/ota.recovery.start"
     },
     {

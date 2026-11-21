@@ -1,5 +1,5 @@
 {
-  welcomed = false,
+  welcomed = true,
   securityUpdate = true,
   readNotes = 1,
 }

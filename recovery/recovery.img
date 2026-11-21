@@ -410,7 +410,7 @@ end
 local runMenu, applyFromLocal
 
 local updateMenu = {
-	{ title = 'From ADB', detail = 'Receive installer using CC:T host file transfer', action = applyFromADB },
+	{ title = 'From CC:T file transfer', detail = 'Receive installer using CC:T host file transfer', action = applyFromADB },
 	{ title = 'From local', detail = 'Run installer.lua from an attached disk', action = function() applyFromLocal() end },
 	{ title = 'From internet', detail = 'Restart recovery in update mode (-u)', action = runRecoveryUpdate },
 	{ title = 'Back', detail = 'Return to the main recovery menu', back = true },

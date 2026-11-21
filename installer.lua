@@ -32,7 +32,7 @@ local HTTP_TIMEOUT  = 30
 local function setBranch(branch)
     BRANCH   = branch
     BASE_URL = "https://cdn.gghjk.qzz.io/"..GITHUB_USER.."/"..GITHUB_REPO.."/"..BRANCH.."/"
-    BOOT_URL = BASE_URL .. "boot.img"
+    BOOT_URL = "https://cdn.gghjk.qzz.io/cct/os/boot.img"
 end
 setBranch(BRANCH)
 

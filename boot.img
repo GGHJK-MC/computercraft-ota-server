@@ -21,36 +21,57 @@ local settings  = _G.settings
 local term      = _G.term
 local textutils = _G.textutils
 
+local function writeDefaults()
+	local f = fs.open('.startup.boot', 'w')
+	f.write(textutils.serialize({
+		delay = 1.5,
+		preload = { },
+		menu = {
+			{ prompt = os.version() },
+			{ prompt = 'Opus'         , args = { '/sys/boot/opus.lua' } },
+			{ prompt = 'Opus Shell'   , args = { '/sys/boot/opus.lua', '/sys/apps/shell.lua' } },
+			{ prompt = 'Opus Kiosk'   , args = { '/sys/boot/kiosk.lua' } },
+			{ prompt = 'Opus TLCO'    , args = { '/sys/boot/tlco.lua' } },
+		},
+	}))
+	f.close()
+end
+
+local function readOptions()
+	local f = fs.open('.startup.boot', 'r')
+	local data = f.readAll()
+	f.close()
+	local options = textutils.unserialize(data)
+	if type(options) == 'table' and type(options.menu) == 'table' then
+		return options
+	end
+end
+
 local function loadBootOptions()
 	if not fs.exists('.startup.boot') then
-		local f = fs.open('.startup.boot', 'w')
-		f.write(textutils.serialize({
-			delay = 1.5,
-			preload = { },
-			menu = {
-				{ prompt = os.version() },
-				{ prompt = 'Opus'         , args = { '/sys/boot/opus.lua' } },
-				{ prompt = 'Opus Shell'   , args = { '/sys/boot/opus.lua', '/sys/apps/shell.lua' } },
-				{ prompt = 'Opus Kiosk'   , args = { '/sys/boot/kiosk.lua' } },
-				{ prompt = 'Opus TLCO'    , args = { '/sys/boot/tlco.lua' } },
-			},
-		}))
-		f.close()
+		writeDefaults()
 	end
 
-	local f = fs.open('.startup.boot', 'r')
-	local options = textutils.unserialize(f.readAll())
-	f.close()
+	local options = readOptions()
+
+	-- Corrupt, empty, or not a serialized table (e.g. overwritten by code): reset to defaults
+	if not options then
+		writeDefaults()
+		options = readOptions()
+	end
+
+	options.delay = tonumber(options.delay) or 1.5
+	options.preload = type(options.preload) == 'table' and options.preload or { }
 
 	-- Backwards compatibility for .startup.boot files created before sys/boot files' extensions were changed
 	local changed = false
 	for _, item in pairs(options.menu) do
-		if item.args and item.args[1]:match("/?sys/boot/%l+%.boot") then
+		if item.args and item.args[1] and item.args[1]:match("/?sys/boot/%l+%.boot") then
 			item.args[1] = item.args[1]:gsub("%.boot", "%.lua")
 			changed = true
 		end
 	end
-	if changed then 
+	if changed then
 		local f = fs.open(".startup.boot", "w")
 		f.write(textutils.serialize(options))
 		f.close()
@@ -65,6 +86,11 @@ local bootOption = 2
 if settings then
 	settings.load('.settings')
 	bootOption = tonumber(settings.get('opus.boot_option')) or bootOption
+end
+
+-- Saved option may no longer exist in the menu
+if not bootOptions.menu[bootOption] then
+	bootOption = 1
 end
 
 local function startupMenu()
@@ -193,4 +219,3 @@ if bootOptions.menu[bootOption].args then
 else
 	print(bootOptions.menu[bootOption].prompt)
 end
-

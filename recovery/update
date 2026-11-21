@@ -1,0 +1,4 @@
+local ok, result, err = pcall(os.run, _ENV, '/recovery/recovery.img', '-u')
+if not ok or not result then
+	print('Could not start recovery update: ' .. tostring(err or result))
+end

@@ -1,0 +1,563 @@
+-- GGHJK Recovery for CC:T
+-- Standalone recovery environment. Run with: shell.run('/recovery/recovery.img')
+
+local GITHUB_USER ='cct'
+local GITHUB_REPO = 'os'
+local RECOVERY_PATH = '/recovery/recovery.img'
+local UPDATE_LAUNCHER = '/recovery/update'
+local UPDATE_MODE = ... == '-u'
+local C = colors
+local t = term.current()
+local oldPalette = {}
+local paletteColors = { C.black, C.gray, C.lightGray, C.white, C.blue, C.lightBlue,
+	C.cyan, C.green, C.lime, C.yellow, C.orange, C.red, C.brown, C.purple, C.magenta, C.pink }
+local W, H
+
+local theme = {
+	bg = C.black, panel = C.gray, track = C.brown, text = C.white,
+	dim = C.lightGray, blue = C.blue, sky = C.lightBlue,
+	cyan = C.cyan, purple = C.purple, green = C.lime, yellow = C.yellow, red = C.red,
+}
+
+local function readBranch()
+	local branch = 'latest-stable'
+	if fs.exists('/version/branch.txt') then
+		local file = fs.open('/version/branch.txt', 'r')
+		if file then branch = file.readAll():gsub('%s+', ''); file.close() end
+	end
+	if type(branch) ~= 'string' or not branch:match('^[%w][%w%._/%-]*$') or
+		branch:find('//', 1, true) or branch:sub(-1) == '/' then
+		return 'latest-stable'
+	end
+	for part in branch:gmatch('[^/]+') do
+		if part == '.' or part == '..' then return 'latest-stable' end
+	end
+	return branch
+end
+
+local function setPalette()
+	if not t.isColor() or not t.setPaletteColor or not t.getPaletteColor then return end
+	for _, color in ipairs(paletteColors) do
+		local r, g, b = t.getPaletteColor(color)
+		oldPalette[#oldPalette + 1] = { color, r, g, b }
+	end
+	local map = {
+		{ C.black, 0x0A0F1C }, { C.gray, 0x17233A }, { C.brown, 0x2A3550 },
+		{ C.lightGray, 0x94A3B8 }, { C.white, 0xE2E8F0 }, { C.blue, 0x3B82F6 },
+		{ C.lightBlue, 0x60A5FA }, { C.cyan, 0x22D3EE }, { C.lime, 0x4ADE80 },
+		{ C.yellow, 0xFBBF24 }, { C.red, 0xF87171 }, { C.purple, 0x8B5CF6 },
+		{ C.magenta, 0xD946EF }, { C.pink, 0xF472B6 },
+	}
+	for _, item in ipairs(map) do
+		local n = item[2]
+		t.setPaletteColor(item[1], math.floor(n / 65536) % 256 / 255,
+			math.floor(n / 256) % 256 / 255, n % 256 / 255)
+	end
+end
+
+local function restorePalette()
+	for _, p in ipairs(oldPalette) do
+		pcall(t.setPaletteColor, p[1], p[2], p[3], p[4])
+	end
+end
+
+local function size()
+	W, H = t.getSize()
+end
+
+local function colorChar(color)
+	local n = math.floor(math.log(color) / math.log(2) + 0.5)
+	return ('0123456789abcdef'):sub(n + 1, n + 1)
+end
+
+local function paint(x, y, value, fg, bg)
+	if y < 1 or y > H then return end
+	t.setCursorPos(math.max(1, x), y)
+	t.setTextColor(fg or theme.text)
+	t.setBackgroundColor(bg or theme.bg)
+	t.write(value)
+end
+
+local function center(y, value, fg, bg)
+	value = tostring(value)
+	if #value > W then value = value:sub(1, W) end
+	paint(math.floor((W - #value) / 2) + 1, y, value, fg, bg)
+end
+
+local function fill(x, y, w, h, bg)
+	for row = y, math.min(H, y + h - 1) do
+		paint(x, row, string.rep(' ', math.max(0, math.min(w, W - x + 1))), theme.text, bg)
+	end
+end
+
+local function frame(x, y, w, h, title)
+	if w < 4 or h < 3 then return end
+	local border = t.isColor() and C.blue or C.white
+	fill(x, y, w, h, theme.panel)
+	paint(x, y, '\129' .. string.rep('\140', w - 2) .. '\130', border, theme.panel)
+	for row = y + 1, y + h - 2 do
+		paint(x, row, '\149', border, theme.panel)
+		paint(x + w - 1, row, '\149', border, theme.panel)
+	end
+	paint(x, y + h - 1, '\144' .. string.rep('\140', w - 2) .. '\159', border, theme.panel)
+	if title then
+		local label = ' ' .. title .. ' '
+		paint(x + math.max(2, math.floor((w - #label) / 2)), y, label, theme.cyan, theme.bg)
+	end
+end
+
+local function clear()
+	size()
+	t.setBackgroundColor(theme.bg)
+	t.setTextColor(theme.text)
+	t.clear()
+	t.setCursorBlink(false)
+end
+
+local function drawHeader(subtitle)
+	local title = W < 29 and 'GGHJK RECOVERY' or 'G G H J K   R E C O V E R Y'
+	center(2, title, theme.cyan)
+	center(3, subtitle or 'CC:T  |  SYSTEM RECOVERY', theme.dim)
+	if H > 5 then
+		paint(2, H - 1, 'CC:T  |  GGHJK Recovery', theme.dim)
+		if W >= 44 then
+			local tag = os.version and os.version() or 'ComputerCraft'
+			tag = tag:sub(1, W - 26)
+			paint(W - #tag - 1, H - 1, tag, theme.dim)
+		end
+	end
+end
+
+local function splash()
+	local started = os.clock()
+	local frames = { '          .', '         ...', '        .oOo.' }
+	for i = 1, 8 do
+		clear()
+		local y = math.max(2, math.floor(H / 2) - 2)
+		center(y, 'GGHJK', i % 2 == 0 and theme.cyan or theme.sky)
+		center(y + 1, 'RECOVERY', theme.text)
+		local progress = math.floor((i / 8) * math.max(4, W - 8))
+		local track = string.rep('\140', math.max(4, W - 8))
+		local active = string.rep('\140', progress)
+		local fg = colorChar(theme.blue):rep(#active) .. colorChar(theme.track):rep(#track - #active)
+		t.setCursorPos(math.floor((W - #track) / 2) + 1, y + 3)
+		t.blit(track, fg, colorChar(theme.bg):rep(#track))
+		center(y + 5, frames[(i - 1) % #frames + 1], theme.dim)
+		os.sleep(0.06)
+	end
+	while os.clock() - started < 0.65 do os.sleep(0) end
+end
+
+local function waitKey()
+	while true do
+		local event, key = os.pullEvent()
+		if event == 'key' then return key end
+		if event == 'term_resize' then size(); return 'resize' end
+	end
+end
+
+local function message(title, lines, isError)
+	clear()
+	drawHeader('RECOVERY CONSOLE')
+	local w = math.min(W - 2, 54)
+	local h = math.min(H - 7, #lines + 6)
+	local x, y = math.floor((W - w) / 2) + 1, math.floor((H - h) / 2) + 1
+	frame(x, y, w, h, title)
+	local fg = isError and theme.red or theme.text
+	for i, line in ipairs(lines) do
+		if y + i + 1 < y + h - 1 then
+			paint(x + 2, y + i + 1, line:sub(1, w - 4), fg, theme.panel)
+		end
+	end
+	center(H - 3, 'Press any key to continue', theme.dim)
+	waitKey()
+end
+
+local function copyTree(source, destination)
+	if not fs.exists(source) then return false, 'Missing: ' .. source end
+	if fs.isDir(source) then
+		if not fs.exists(destination) then fs.makeDir(destination) end
+		for _, name in ipairs(fs.list(source)) do
+			local ok, err = copyTree(fs.combine(source, name), fs.combine(destination, name))
+			if not ok then return false, err end
+		end
+	else
+		local input = fs.open(source, 'rb')
+		if not input then return false, 'Cannot read: ' .. source end
+		local data = input.readAll()
+		input.close()
+		local parent = fs.getDir(destination)
+		if parent ~= '' and not fs.exists(parent) then fs.makeDir(parent) end
+		local output = fs.open(destination, 'wb')
+		if not output then return false, 'Cannot write: ' .. destination end
+		output.write(data)
+		output.close()
+	end
+	return true
+end
+
+local function findBackupDrive()
+	if not peripheral or not peripheral.getNames then return nil end
+	for _, side in ipairs(peripheral.getNames()) do
+		if peripheral.getType(side) == 'drive' and disk and disk.getMountPath then
+			local mount = disk.getMountPath(side)
+			if mount then return mount end
+		end
+	end
+end
+
+local function backup()
+	local mount = findBackupDrive()
+	if not mount then
+		message('BACKUP UNAVAILABLE', { 'Insert a disk into a disk drive first.', 'No files were changed.' }, true)
+		return
+	end
+	local stamp = os.epoch and tostring(os.epoch('utc')) or tostring(math.floor(os.clock() * 1000))
+	local target = fs.combine(mount, 'gghjk-backup-' .. stamp)
+	fs.makeDir(target)
+	local items = { 'sys', 'usr', 'packages', '.startup.boot', '.settings', 'boot.img' }
+	local copied, errors = 0, {}
+	for _, path in ipairs(items) do
+		if fs.exists('/' .. path) then
+			local ok, err = copyTree('/' .. path, fs.combine(target, path))
+			if ok then copied = copied + 1 else errors[#errors + 1] = err end
+		end
+	end
+	if #errors > 0 then
+		message('BACKUP INCOMPLETE', { copied .. ' items copied to ' .. target, errors[1] }, true)
+	else
+		message('BACKUP COMPLETE', { copied .. ' system items copied.', 'Saved to ' .. target }, false)
+	end
+end
+
+local function restoreBackup()
+	local mount = findBackupDrive()
+	if not mount then
+		message('RESTORE UNAVAILABLE', { 'Insert the disk containing a GGHJK backup.' }, true)
+		return
+	end
+	local candidate
+	for _, name in ipairs(fs.list(mount)) do
+		local path = fs.combine(mount, name)
+		if name:match('^gghjk%-backup%-%d+$') and fs.isDir(path) and (not candidate or name > candidate.name) then
+			candidate = { name = name, path = path }
+		end
+	end
+	if not candidate then
+		message('NO BACKUP FOUND', { 'No gghjk-backup-* directory exists on this disk.' }, true)
+		return
+	end
+	clear()
+	drawHeader('RESTORE SYSTEM BACKUP')
+	center(math.floor(H / 2) - 1, 'Restore ' .. candidate.name .. '?', theme.yellow)
+	center(math.floor(H / 2) + 1, 'This overwrites matching system files.', theme.dim)
+	center(math.floor(H / 2) + 3, 'Y: restore     N: cancel', theme.text)
+	while true do
+		local event, key = os.pullEvent()
+		if event == 'char' then
+			if key:lower() == 'n' then return end
+			if key:lower() == 'y' then break end
+		elseif event == 'key' and key == keys.escape then return end
+	end
+	local items = { 'sys', 'usr', 'packages', '.startup.boot', '.settings', 'boot.img' }
+	local restored, errors = 0, {}
+	for _, name in ipairs(items) do
+		local source = fs.combine(candidate.path, name)
+		if fs.exists(source) then
+			local ok, err = copyTree(source, '/' .. name)
+			if ok then restored = restored + 1 else errors[#errors + 1] = err end
+		end
+	end
+	if #errors > 0 then
+		message('RESTORE INCOMPLETE', { restored .. ' items restored.', errors[1] }, true)
+	else
+		message('RESTORE COMPLETE', { restored .. ' system items restored.', 'Restart to use the restored system.' }, false)
+	end
+end
+
+local function systemCheck()
+	local checks = {
+		{ 'Boot image', '/boot.img' }, { 'System files', '/sys' },
+		{ 'Configuration', '/usr/config' }, { 'Recovery image', '/recovery/recovery.img' },
+	}
+	local okCount, lines = 0, {}
+	for _, item in ipairs(checks) do
+		local exists = fs.exists(item[2])
+		if exists then okCount = okCount + 1 end
+		lines[#lines + 1] = (exists and '[OK]  ' or '[MISSING]  ') .. item[1]
+	end
+	lines[#lines + 1] = 'Free space: ' .. tostring(fs.getFreeSpace('/')) .. ' bytes'
+	lines[#lines + 1] = 'HTTP: ' .. (http and 'available' or 'disabled')
+	message('SYSTEM CHECK', lines, okCount < #checks)
+end
+
+local function factoryReset()
+	clear()
+	drawHeader('FACTORY RESET')
+	center(math.floor(H / 2) - 2, 'This removes user settings and trusted hosts.', theme.yellow)
+	center(math.floor(H / 2) - 1, 'System files and installed packages stay intact.', theme.dim)
+	center(math.floor(H / 2) + 1, 'Type RESET to continue:', theme.text)
+	local typed = ''
+	while true do
+		paint(math.floor((W - 12) / 2) + 1, math.floor(H / 2) + 3,
+			string.rep(' ', 12), theme.cyan, theme.bg)
+		paint(math.floor((W - 12) / 2) + 1, math.floor(H / 2) + 3,
+			'[' .. typed .. string.rep('_', 5 - #typed) .. ']', theme.cyan, theme.bg)
+		local event, value = os.pullEvent()
+		if event == 'char' and #typed < 5 then
+			typed = typed .. value:upper()
+		elseif event == 'key' and value == keys.backspace then
+			typed = typed:sub(1, -2)
+		elseif event == 'key' and value == keys.escape then
+			return
+		elseif event == 'key' and value == keys.enter then
+			if typed == 'RESET' then break end
+		end
+	end
+	local paths = { '.settings', '/usr/.registry', '/usr/.known_hosts', '/usr/.ssh' }
+	local removed, errors = 0, {}
+	for _, path in ipairs(paths) do
+		if fs.exists(path) then
+			local ok, err = pcall(fs.delete, path)
+			if ok then removed = removed + 1 else errors[#errors + 1] = tostring(err) end
+		end
+	end
+	if #errors > 0 then
+		message('RESET INCOMPLETE', { removed .. ' user data locations cleared.', errors[1] }, true)
+	else
+		message('RESET COMPLETE', { removed .. ' user data locations cleared.', 'Restart the computer to continue.' }, false)
+	end
+end
+
+local function launchInstaller(source, name, branch)
+	if not loadstring then
+		message('INSTALLER ERROR', { 'This CC:T version cannot load Lua source.' }, true)
+		return
+	end
+	local compiled, chunk, compileError = pcall(loadstring, source, name)
+	if not compiled or not chunk then
+		message('INVALID INSTALLER', { tostring(compileError or chunk or 'Could not load installer') }, true)
+		return
+	end
+	if setfenv then setfenv(chunk, _ENV) end
+	local ran, err = pcall(chunk, '-' .. (branch or readBranch()))
+	if not ran then message('INSTALLER ERROR', { tostring(err):sub(1, W - 4) }, true) end
+end
+
+local function applyUpdate(branch)
+	branch = branch or readBranch()
+	if not http or not http.get then
+		message('HTTP DISABLED', { 'Enable HTTP in the ComputerCraft config.', 'Recovery remains available offline.' }, true)
+		return
+	end
+	clear()
+	drawHeader('DOWNLOADING REPAIR TOOL')
+	center(math.floor(H / 2), 'Connecting to the GGHJK update server...', theme.text)
+	local url = 'https://cdn.gghjk.qzz.io/' .. GITHUB_USER .. '/' .. GITHUB_REPO .. '/' .. branch .. '/installer.lua'
+	local ok, response = pcall(http.get, url, nil, true)
+	if not ok or not response then
+		message('DOWNLOAD FAILED', { tostring(response or 'No response from server'), 'Check the network and try again.' }, true)
+		return
+	end
+	local source = response.readAll()
+	response.close()
+	launchInstaller(source, '@GGHJK installer', branch)
+end
+
+local function runRecoveryUpdate()
+	local ok, ran, err = pcall(os.run, _ENV, UPDATE_LAUNCHER)
+	if not ok or not ran then
+		message('UPDATE MODE FAILED', { tostring(err or ran or 'Could not start update mode') }, true)
+	end
+end
+
+local function applyFromADB()
+	clear()
+	drawHeader('APPLY UPDATE FROM HOST')
+	center(math.floor(H / 2) - 1, 'Drop installer.lua onto this CC:T computer.', theme.text)
+	center(math.floor(H / 2) + 1, 'This uses CC:T file transfer, not Android ADB.', theme.dim)
+	center(H - 2, 'Esc: cancel', theme.dim)
+	while true do
+		local event, value = os.pullEvent()
+		if event == 'key' and value == keys.escape then return end
+		if event == 'file_transfer' and value and value.getFiles then
+			local received
+			for _, file in ipairs(value.getFiles()) do
+				local name = file.getName and file.getName() or ''
+				local lower = name:lower()
+				if not received and (lower == 'installer.lua' or lower:match('^gghjk%-update.*%.lua$')) then
+					received = { file = file, name = name }
+				elseif file.close then
+					file.close()
+				end
+			end
+			if not received then
+				message('UNSUPPORTED FILE', { 'Send installer.lua or gghjk-update*.lua.' }, true)
+				return
+			end
+			local ok, source = pcall(received.file.readAll)
+			if received.file.close then received.file.close() end
+			if not ok or type(source) ~= 'string' then
+				message('TRANSFER FAILED', { 'Could not read ' .. received.name }, true)
+				return
+			end
+			launchInstaller(source, '@' .. received.name, readBranch())
+			return
+		end
+	end
+end
+
+local runMenu, applyFromLocal
+
+local updateMenu = {
+	{ title = 'From CC:T file transfer', detail = 'Receive installer using CC:T host file transfer', action = applyFromADB },
+	{ title = 'From local', detail = 'Run installer.lua from an attached disk', action = function() applyFromLocal() end },
+	{ title = 'From internet', detail = 'Restart recovery in update mode (-u)', action = runRecoveryUpdate },
+	{ title = 'Back', detail = 'Return to the main recovery menu', back = true },
+}
+updateMenu.submenuTitle = 'APPLY UPDATE'
+
+local advancedMenu = {
+	{ title = 'Create backup', detail = 'Copy system files and settings to disk', action = backup },
+	{ title = 'Restore backup', detail = 'Restore the newest backup from disk', action = restoreBackup },
+	{ title = 'Run diagnostics', detail = 'Check boot files, configuration and HTTP', action = systemCheck },
+	{ title = 'Emergency shell', detail = 'Open the ComputerCraft command shell', action = function()
+		clear()
+		local shellPath = fs.exists('/rom/programs/shell.lua') and '/rom/programs/shell.lua' or 'rom/programs/shell.lua'
+		local ok, err = pcall(os.run, _ENV, shellPath)
+		if not ok then message('SHELL ERROR', { tostring(err) }, true) end
+	end },
+	{ title = 'Back', detail = 'Return to the main recovery menu', back = true },
+}
+
+local menu = {
+	{ title = 'Reboot system now', detail = 'Restart and boot the installed system', action = function() os.reboot() end },
+	{ title = 'Apply update', detail = 'Choose ADB, local file or internet', submenu = updateMenu },
+	{ title = 'Factory reset', detail = 'Clear user settings and trusted hosts', action = factoryReset },
+	{ title = 'Advanced', detail = 'Backup, restore, diagnostics and shell', submenu = advancedMenu },
+	{ title = 'Power off', detail = 'Shut down this computer', action = function() os.shutdown() end },
+}
+
+local function drawMenu(selected, items, subtitle)
+	clear()
+	drawHeader(subtitle or 'CC:T  |  GGHJK Recovery 1.0')
+	local version
+	if fs.exists('/version/ver.txt') then
+		local f = fs.open('/version/ver.txt', 'r')
+		if f then version = f.readAll():gsub('%s+$', ''); f.close() end
+	end
+	center(5, version and ('Installed build: ' .. version):sub(1, W - 2) or 'Installed build: unknown', theme.dim)
+	local startY = H >= 16 and math.max(7, math.floor((H - #items) / 2)) or 6
+	local endY = H >= 16 and H - 5 or H - 3
+	local visible = math.max(1, endY - startY + 1)
+	local top = math.max(1, math.min(selected, #items - visible + 1))
+	for i = top, math.min(#items, top + visible - 1) do
+		local item = items[i]
+		local row = startY + i - top
+		local bg = i == selected and theme.purple or theme.bg
+		local fg = i == selected and C.white or theme.text
+		fill(2, row, W - 2, 1, bg)
+		center(row, item.title:sub(1, W - 4), fg, bg)
+	end
+	local detail = items[selected].detail
+	if H >= 16 then center(endY + 1, detail:sub(1, W - 2), theme.dim) end
+	if H > 3 then
+		center(H - 2, W < 42 and 'Arrows move  Enter select' or 'Up/Down: move     Enter: select     Esc: back', theme.dim)
+	end
+end
+
+runMenu = function(items, subtitle, canBack)
+	local selected = 1
+	while true do
+		drawMenu(selected, items, subtitle)
+		local event, key = os.pullEvent()
+		if event == 'term_resize' then
+			size()
+		elseif event == 'key' then
+			if key == keys.up then selected = selected == 1 and #items or selected - 1
+			elseif key == keys.down then selected = selected == #items and 1 or selected + 1
+			elseif key == keys.enter or key == keys.right then
+				local item = items[selected]
+				if item.submenu then
+					runMenu(item.submenu, item.submenu.submenuTitle or 'ADVANCED OPTIONS', true)
+				elseif item.back then
+					return
+				elseif item.action then
+					item.action()
+				end
+			elseif canBack and (key == keys.escape or key == keys.backspace) then
+				return
+			end
+		elseif event == 'char' and key:lower() == 'q' and canBack then
+			return
+		end
+	end
+end
+
+applyFromLocal = function()
+	local files, seen = {}, {}
+	local function addRoot(root)
+		if not root or not fs.exists(root) or not fs.isDir(root) then return end
+		for _, name in ipairs(fs.list(root)) do
+			local path = fs.combine(root, name)
+			local lower = name:lower()
+			if not fs.isDir(path) and lower:match('%.lua$') and
+				(lower == 'installer.lua' or lower:match('^gghjk%-update.*%.lua$')) and not seen[path] then
+				seen[path] = true
+				files[#files + 1] = path
+			end
+		end
+	end
+	if fs.exists('/installer.lua') then files[#files + 1] = '/installer.lua' end
+	if peripheral and peripheral.getNames then
+		for _, side in ipairs(peripheral.getNames()) do
+			if peripheral.getType(side) == 'drive' and disk and disk.getMountPath then
+				addRoot(disk.getMountPath(side))
+			end
+		end
+	end
+	table.sort(files)
+	if #files == 0 then
+		message('NO LOCAL INSTALLER', { 'Place installer.lua on an attached disk.', 'Then select Apply update > From local.' }, true)
+		return
+	end
+	local choices = {}
+	for _, path in ipairs(files) do
+		choices[#choices + 1] = {
+			title = fs.getName(path), detail = path,
+			action = function()
+				local file = fs.open(path, 'r')
+				if not file then message('READ FAILED', { path }, true); return end
+				local source = file.readAll()
+				file.close()
+				launchInstaller(source, '@' .. path, readBranch())
+			end,
+		}
+	end
+	choices[#choices + 1] = { title = 'Back', detail = 'Return to update methods', back = true }
+	runMenu(choices, 'LOCAL UPDATE', true)
+end
+
+local function main()
+	setPalette()
+	if UPDATE_MODE then
+		applyUpdate(readBranch())
+	else
+		splash()
+		runMenu(menu, 'CC:T  |  GGHJK Recovery 1.0')
+	end
+end
+
+local ok, err = pcall(main)
+restorePalette()
+t.setBackgroundColor(C.black)
+t.setTextColor(C.white)
+t.setCursorBlink(false)
+t.clear()
+t.setCursorPos(1, 1)
+if not ok and tostring(err) ~= 'Terminated' then
+	print('GGHJK Recovery error: ' .. tostring(err))
+	print('Press any key to restart.')
+	os.pullEvent('key')
+	os.reboot()
+end

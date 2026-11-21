@@ -1,4 +1,3 @@
 sys/apps/pain.lua urlfs https://github.com/LDDestroier/CC/raw/master/pain.lua
 sys/apps/Enchat.lua urlfs https://raw.githubusercontent.com/LDDestroier/enchat/master/enchat3.lua
 rom/modules/main/opus linkfs sys/modules/opus
-sys/apps/update-ota.lua urlfs https://raw.githubusercontent.com/MC-GGHJK/computercraft-ota-server/main/content/update-ota.lua

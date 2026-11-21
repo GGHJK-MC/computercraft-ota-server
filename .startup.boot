@@ -35,7 +35,7 @@
     {
       prompt = "GGHJK OS Update",
       args = {
-        "/recovery/ota.recovery.start",
+        "/recovery/update",
       },
     },
   },

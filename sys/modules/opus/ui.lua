@@ -365,13 +365,7 @@ function UI:setPage(pageOrName, ...)
 			page.previousPage = currentPage
 		end
 		self:setActivePage(page)
-		-- Keep page changes lively like the updater UI: new screens enter
-		-- from the right, while returning screens enter from the left.
-		local transitionHint = page.transitionHint
-		page.transitionHint = page._navigationTransition or transitionHint or 'slideLeft'
 		page:enable(...)
-		page.transitionHint = transitionHint
-		page._navigationTransition = nil
 		page:draw()
 		if page.focused then
 			page.focused.focused = true
@@ -387,12 +381,9 @@ end
 
 function UI:setPreviousPage()
 	if self.term.currentPage.previousPage then
-		local currentPage = self.term.currentPage
-		local previousPage = currentPage.previousPage
-		local nextPreviousPage = previousPage.previousPage
-		previousPage._navigationTransition = 'slideRight'
-		self:setPage(previousPage)
-		self.term.currentPage.previousPage = nextPreviousPage
+		local previousPage = self.term.currentPage.previousPage.previousPage
+		self:setPage(self.term.currentPage.previousPage)
+		self.term.currentPage.previousPage = previousPage
 	end
 end
 
